@@ -1,0 +1,80 @@
+//titles
+"today-title" = "היום";
+"planner-title" = "תכנון";
+"calendar-title" = "לוח שנה";
+"tasks-title" = "משימות";
+"settings-title" = "הגדרות";
+"editing-title" = "עריכה";
+"goals-tile" = "מטרות";
+
+//settings tips
+"Planner-tip-Entries-title" = "רשומות בתכנון";
+"tasks-tip-title" = "משימות";
+"classes-tip-title" = "שיעורים";
+"weeks-tip-More-title" = "שבועות ועוד";
+
+//settings sections
+"General" = "כללי";
+"Get More Features" = "קבל יותר תכונות";
+"Personal Details" = "פרטים אישיים";
+"Appearance & Customisation" = "מראה והתאמה אישית";
+"Display and Layout" = "תצוגה ופריסה";
+"Data Management" = "ניהול מידע";
+"Debug & Testing" = "איתור תקלות ובדיקות";
+
+//settings titles
+"About" = "אודות";
+"Kyo+" = "קיו+";
+"details-title" = "פרטים";
+"Look & Feel" = "מראה ותחושה";
+"Notifications" = "התראות";
+"Automatic Rotation" = "סיבוב אוטומטי";
+"Today" = "היום";
+"Planner" = "תכנון";
+"Classes and Splits" = "שיעורים וחלוקות";
+"Teachers"= "מורים";
+"Import and Export" = "ייבוא וייצוא";
+"Reset Kyo" = "איפוס Kyo";
+"debug list" = "רשימת איתור תקלות";
+"Show Onboarding Again" = "הצג מחדש את ההדרכה";
+
+//context menu - add
+"entries-header" = "רשומות";
+"new-entry" = "רשומה חדשה";
+"other-header" = "אחר";
+"create-week" = "צור שבוע";
+"create-class"= "צור שיעור";
+
+//context menu - manage
+"manage-header" = "עוד";
+"edit-text-planner"= "ערוך את התכנון";
+"manage-teachers" = "מורים";
+"manage-weeks"= "נהל שבועות";
+"manage-classses"= "שיעורים";
+"manage-teachers"= "מורים";
+"manage-splits"= "חלוקות";
+
+//context menu - viewmode
+"current-header" = "נוכחי";
+"edit-text"= "עריכה";
+
+//days
+"day-mon" = "יום ב'";
+"day-tue" = "יום ג'";
+"day-wed" = "יום ד'";
+"day-thu" = "יום ה'";
+"day-fri" = "יום ו'";
+"day-sat" = "יום שבת";
+"day-sun" = "יום א'";
+
+//misc words
+"week-string" = "שבוע";
+"week-number %lld" = "שבוע %lld";
+"day-string" = "יום";
+
+//entries
+"starts-string" = "התחלה";
+"ends-string" = "סיום";
+"remaining-string" = "נותר";
+"ended-string" = "סיים";
+"room-string" = "חדר";

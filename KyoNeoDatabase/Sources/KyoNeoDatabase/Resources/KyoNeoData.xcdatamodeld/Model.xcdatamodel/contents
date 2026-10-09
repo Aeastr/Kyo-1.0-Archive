@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="22C5033e" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Day" representedClassName="Day" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="number" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="classes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TimeSlot" inverseName="day" inverseEntity="TimeSlot"/>
+        <relationship name="week" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Week" inverseName="days" inverseEntity="Week"/>
+    </entity>
+    <entity name="Task" representedClassName="Task" syncable="YES" codeGenerationType="class">
+        <attribute name="due" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="time" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="TimeSlot" representedClassName="TimeSlot" syncable="YES" codeGenerationType="class">
+        <attribute name="color1" optional="YES" attributeType="String"/>
+        <attribute name="color2" optional="YES" attributeType="String"/>
+        <attribute name="endTime" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="room" optional="YES" attributeType="String"/>
+        <attribute name="startTime" optional="YES" attributeType="String"/>
+        <attribute name="teacher" optional="YES" attributeType="String"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="day" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Day" inverseName="classes" inverseEntity="Day"/>
+    </entity>
+    <entity name="Week" representedClassName="Week" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="number" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="days" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Day" inverseName="week" inverseEntity="Day"/>
+    </entity>
+</model>

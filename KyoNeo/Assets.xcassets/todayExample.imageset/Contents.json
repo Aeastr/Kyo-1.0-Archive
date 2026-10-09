@@ -1,0 +1,22 @@
+{
+  "images" : [
+    {
+      "filename" : "Transparent iPhone 15 Pro Perspective Semi Right Natural Titanium Mockup (Mockuuups Studio).png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "Transparent iPhone 15 Pro Perspective Semi Right Natural Titanium Mockup (Mockuuups Studio)-1.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

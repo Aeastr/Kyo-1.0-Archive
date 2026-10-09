@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22757" systemVersion="23A344" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="ClassEntity" representedClassName="ClassEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="color1" optional="YES" attributeType="String"/>
+        <attribute name="color2" optional="YES" attributeType="String"/>
+        <attribute name="hscolorname" optional="YES" attributeType="String"/>
+        <attribute name="icon" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="pinned" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="shortName" optional="YES" attributeType="String"/>
+        <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TagItem" inverseName="classes" inverseEntity="TagItem"/>
+        <relationship name="taskEntity" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TaskEntity" inverseName="classEntity" inverseEntity="TaskEntity"/>
+        <relationship name="timeSlot" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TimeSlot" inverseName="classEntity" inverseEntity="TimeSlot"/>
+    </entity>
+    <entity name="CusColor" representedClassName="CusColor" syncable="YES" codeGenerationType="class">
+        <attribute name="color1" optional="YES" attributeType="String"/>
+        <attribute name="color2" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+    </entity>
+    <entity name="CustomUserColor" representedClassName="CustomUserColor" syncable="YES" codeGenerationType="class">
+        <attribute name="color1" optional="YES" attributeType="String"/>
+        <attribute name="color2" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
+    <entity name="Day" representedClassName="Day" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="number" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="timeSlots" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TimeSlot" inverseName="day" inverseEntity="TimeSlot"/>
+        <relationship name="week" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Week" inverseName="days" inverseEntity="Week"/>
+    </entity>
+    <entity name="SplitterEntity" representedClassName="SplitterEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="codeName" optional="YES" attributeType="String"/>
+        <attribute name="color1" optional="YES" attributeType="String"/>
+        <attribute name="color2" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="number" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="timeSlot" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TimeSlot" inverseName="splitterEntity" inverseEntity="TimeSlot"/>
+    </entity>
+    <entity name="TagItem" representedClassName="TagItem" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="classes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ClassEntity" inverseName="tags" inverseEntity="ClassEntity"/>
+    </entity>
+    <entity name="TaskEntity" representedClassName="TaskEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="archived" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="completed" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="doNotArchive" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="due" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="icon" optional="YES" attributeType="String"/>
+        <attribute name="label" optional="YES" attributeType="String" spotlightIndexingEnabled="YES"/>
+        <attribute name="link" optional="YES" attributeType="String"/>
+        <attribute name="muted" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <relationship name="classEntity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ClassEntity" inverseName="taskEntity" inverseEntity="ClassEntity"/>
+        <relationship name="taskType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TaskTypeEntity" inverseName="taskEntities" inverseEntity="TaskTypeEntity"/>
+        <fetchedProperty name="fetchedProperty" optional="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="TaskEntity"/>
+        </fetchedProperty>
+    </entity>
+    <entity name="TaskTypeEntity" representedClassName="TaskTypeEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="icon" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="taskEntities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TaskEntity" inverseName="taskType" inverseEntity="TaskEntity"/>
+    </entity>
+    <entity name="TeacherEntity" representedClassName="TeacherEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="teachingTimeSlots" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TimeSlot" inverseName="taughtBy" inverseEntity="TimeSlot"/>
+    </entity>
+    <entity name="TimeSlot" representedClassName="TimeSlot" syncable="YES" codeGenerationType="class">
+        <attribute name="color1" optional="YES" attributeType="String"/>
+        <attribute name="color2" optional="YES" attributeType="String"/>
+        <attribute name="endTime" optional="YES" attributeType="String"/>
+        <attribute name="freeSlot" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="locationLat" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="locationLong" optional="YES" attributeType="Double" usesScalarValueType="YES"/>
+        <attribute name="locationName" optional="YES" attributeType="String"/>
+        <attribute name="muted" optional="YES" attributeType="Boolean" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="notificationEnabled" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="room" optional="YES" attributeType="String"/>
+        <attribute name="startTime" optional="YES" attributeType="String"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="Integer 32" usesScalarValueType="YES"/>
+        <relationship name="classEntity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ClassEntity" inverseName="timeSlot" inverseEntity="ClassEntity"/>
+        <relationship name="day" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Day" inverseName="timeSlots" inverseEntity="Day"/>
+        <relationship name="splitterEntity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SplitterEntity" inverseName="timeSlot" inverseEntity="SplitterEntity"/>
+        <relationship name="taughtBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TeacherEntity" inverseName="teachingTimeSlots" inverseEntity="TeacherEntity"/>
+    </entity>
+    <entity name="Week" representedClassName="Week" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="number" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="singleDayWeek" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="days" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Day" inverseName="week" inverseEntity="Day"/>
+    </entity>
+</model>

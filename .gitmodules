@@ -1,0 +1,3 @@
+[submodule "KyoNeoDatabase"]
+	path = KyoNeoDatabase
+	url = https://github.com/Aeastr/KyoNeoDatabase

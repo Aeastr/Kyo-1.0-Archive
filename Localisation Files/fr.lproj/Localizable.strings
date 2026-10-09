@@ -1,0 +1,80 @@
+//titles
+"today-title" = "Jour";
+"planner-title" = "Planning";
+"calendar-title" = "Calendrier";
+"tasks-title" = "Tâches";
+"settings-title" = "Réglages";
+"editing-title" = "Édition";
+"goals-tile" = "Objectifs";
+
+//settings tips
+"Planner-tip-Entries-title" = "Entrées du planning";
+"tasks-tip-title" = "Tâches";
+"classes-tip-title" = "Cours";
+"weeks-tip-More-title" = "Semaines et plus";
+
+//settings sections
+"General" = "Général";
+"Get More Features" = "Obtenir plus de fonctionnalités";
+"Personal Details" = "Détails personnels";
+"Appearance & Customisation" = "Apparence et personnalisation";
+"Display & Layout" = "Affichage et mise en page";
+"Data Management" = "Gestion des données";
+"Debug & Testing" = "Débogage et test";
+
+//settings titles
+"About" = "À propos";
+"Kyo+ " = "Kyo+";
+"Details" = "Détails";
+"Look & Feel" = "Apparence et ressenti";
+"Notifications" = "Notifications";
+"Automatic Rotation" = "Rotation automatique";
+"Today" = "Aujourd'hui";
+"Planner" = "Planning";
+"Classes & Splits" = "Cours et divisions";
+"Teachers" = "Enseignants";
+"Import and Export" = "Importation et exportation";
+"Reset Kyo" = "Réinitialiser Kyo";
+"debug list" = "Liste de débogage";
+"Show Onboarding Again" = "Afficher à nouveau le didacticiel";
+
+//context menu - add
+"entries-header" = "Entrées";
+"new-entry" = "Nouvelle entrée";
+"other-header" = "Autre";
+"create-week" = "Créer une semaine";
+"create-class"= "Créer un cours";
+
+//context menu - manage
+"manage-header" = "Plus";
+"edit-text-planner"= "Modifier le planning";
+"manage-teachers" = "Enseignants";
+"manage-weeks"= "Gérer les semaines";
+"manage-classses"= "Cours";
+"manage-teachers"= "Enseignants";
+"manage-splits"= "Divisions";
+
+//context menu - viewmode
+"current-header" = "Actuel";
+"edit-text"= "Modifier";
+
+//days
+"day-mon" = "Lun";
+"day-tue" = "Mar";
+"day-wed" = "Mer";
+"day-thu" = "Jeu";
+"day-fri" = "Ven";
+"day-sat" = "Sam";
+"day-sun" = "Dim";
+
+//misc words
+"week-string" = "Semaine";
+"week-number %lld" = "Semaine %lld";
+"day-string" = "Jour";
+
+//entries
+"starts-string" = "Débute";
+"ends-string" = "Se termine";
+"remaining-string" = "Restant";
+"ended-string" = "Terminé";
+"room-string" = "Salle";

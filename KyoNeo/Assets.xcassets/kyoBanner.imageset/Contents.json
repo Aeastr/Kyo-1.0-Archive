@@ -1,0 +1,22 @@
+{
+  "images" : [
+    {
+      "filename" : "MacBook Pro 14_ - 11.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "MacBook Pro 14_ - 12.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

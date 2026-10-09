@@ -1,0 +1,96 @@
+//titles
+"today-title" = "Today";
+"planner-title" = "Planner";
+"calendar-title" = "Calendar";
+"tasks-title" = "Tasks";
+"settings-title" = "Settings";
+"more-title" = "More";
+"classes-title" = "Classes";
+"editing-title" = "Editing";
+"goals-tile" = "Goals";
+
+//settings tips
+"Planner-tip-Entries-title" = "Planner Entries";
+"tasks-tip-title" = "Tasks";
+"classes-tip-title" = "Classes";
+"weeks-tip-More-title" = "Weeks & More";
+
+//settings sections
+"General" = "General";
+"Get More Features" = "Get More Features";
+"Personal Details" = "Personal Details";
+"Appearance & Customisation" = "Appearance & Customisation";
+"Display and Layout" = "Display and Layout";
+"Data Management" = "Data Management";
+"Debug & Testing" = "Debug & Testing";
+
+//settings titles
+"About" = "About";
+"Kyo+" = "Kyo+";
+"details-title" = "Details";
+"Look & Feel" = "Look and Feel";
+"Notifications" = "Notifications";
+"Automatic Rotation" = "Automatic Rotation";
+"Today" = "Today";
+"Planner" = "Planner";
+"Classes and Splits" = "Classes and Splits";
+"Modules and Splits" = "Modules and Splits";
+"Teachers"= "Teachers";
+"Import and Export" = "Import and Export";
+"Reset Kyo" = "Reset Kyo";
+"debug list" = "debug list";
+"Show Onboarding Again" = "Show Onboarding Again";
+
+
+//context menu - add
+"entries-header" = "Entries";
+"new-entry" = "Entry";
+"other-header" = "Other";
+"create-week" = "Create Week";
+"create-class"= "Create Class";
+
+// general
+
+"module" = "module";
+
+//context menu - manage
+"manage-header" = "More";
+"edit-text-planner"= "Edit Planner";
+"manage-teachers" = "Teachers";
+"manage-weeks"= "Manage Weeks";
+"manage-classes"= "Classes";
+"manage-modules"= "Modules";
+"manage-teachers"= "Teachers";
+"manage-splits"= "Splits";
+
+//context menu - viewmode
+"current-header" = "Current";
+"edit-text"= "Edit";
+
+//class data
+"class" = "class";
+"Edit Class" = "Edit Class";
+"Edit Module" = "Edit Module";
+"New Class" = "New Class";
+"New Module" = "New Module";
+
+//days
+"day-mon" = "Mon";
+"day-tue" = "Tue";
+"day-wed" = "Wed";
+"day-thu" = "Thu";
+"day-fri" = "Fri";
+"day-sat" = "Sat";
+"day-sun" = "Sun";
+
+//misc words
+"week-string" = "Week";
+"week-number %lld" = "Week %lld";
+"day-string" = "Day";
+
+//entries
+"starts-string" = "Starts";
+"ends-string" = "Ends";
+"remaining-string" = "Remaining";
+"ended-string" = "Ended";
+"room-string" = "Room";
