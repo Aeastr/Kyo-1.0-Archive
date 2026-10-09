@@ -351,13 +351,8 @@ struct AccentColor: View {
 
             TEMPappAccentColorIndex = appAccentColorIndex
 
-            KyoPlus().checkPaymentStatus { Bool in
+            // FIX: No purchase check or access-state write is needed; Kyo+ is permanently unlocked.
 
-                if Bool{
-                    TEMPappAccentColor = appAccentColor
-                    TEMPmulticolored = multicolored
-                }
-                                                                                   }
         }
         #if os(visionOS)
         .onChange(of: TEMPmulticolored) { change in

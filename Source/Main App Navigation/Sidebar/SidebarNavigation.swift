@@ -42,7 +42,8 @@ struct Sidebar: View {
     @State var showStartErrorAlert = false
 
     @FetchRequest(sortDescriptors: []) var weeks: FetchedResults<Week> // Fetches weeks from Core Data
-    @AppStorage("kyoPlus_hasPlus") var kyoPlus_hasPlus: Bool = false
+    // FIX: Archive access is unconditional; do not read or update a persisted purchase flag.
+    private var kyoPlus_hasPlus: Bool { true }
     @State var kyoPlus_showPurchaseScreen: Bool = false
 
     @FetchRequest(sortDescriptors: []) var classes: FetchedResults<ClassEntity>

@@ -72,7 +72,9 @@ struct ClassComposer: View {
         }
     }
 
-    @AppStorage("kyoPlus_hasPlus") var kyoPlus_hasPlus: Bool = false
+    // FIX: Archive access is unconditional; do not read or update a persisted purchase flag.
+
+    private var kyoPlus_hasPlus: Bool { true }
 
     var body: some View {
         ZStack {
@@ -110,7 +112,7 @@ struct ClassComposer: View {
 #endif
                 }
                 else{
-                    KyoPlusButton(color: color1, kyoPlus_hasPlus: $kyoPlus_hasPlus, text: "Upgrade to Kyo+ for more colours", emoji: "🎨")
+                    KyoPlusButton(color: color1, kyoPlus_hasPlus: .constant(true), text: "Upgrade to Kyo+ for more colours", emoji: "🎨")
 #if os(iOS)
                         .padding(.bottom, 30)
                     #else

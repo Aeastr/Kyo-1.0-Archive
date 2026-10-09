@@ -27,3 +27,11 @@ All archive edits to source and project configuration have searchable `FIX:` com
 Kyo+ is enabled locally at launch and returned as active by the shared entitlement check. The two screens with separate local access state also default to unlocked. The original purchase UI is bypassed with an archive explanation; SDK configuration, offerings, membership management, and support account-ID lookup are skipped. Original purchase implementations remain in source, and additions have `FIX:` comments. This unlock was added after the author’s successful build and has not yet been verified on a device.
 
 The remote `original-source` branch points to the sanitized snapshot before compiler repairs and the Kyo+ unlock. It retains the original app implementation with archive identifiers and recovered dependency setup. The untouched local branch and backup were not published.
+
+## Launch regression after the Kyo+ unlock
+
+The author reported a white screen after the unlock changes. A paused device stack passed through the existing AmethystUI home-indicator lookup and SwiftUI AttributeGraph, but this does not establish the trigger. The archive entitlement callback now delivers on the next main-queue turn, retaining the asynchronous timing of the original purchase check. Launch also avoids rewriting an already-enabled access flag. AmethystUI remains unchanged. Device verification is pending.
+
+## Permanent Kyo+ access
+
+The callback-based archive unlock has been replaced by read-only `true` access values and constant bindings. Active purchase-status requests and their callbacks have been removed, along with SDK setup and launch-time entitlement writes. This avoids making entitlement state changes during view updates. Historical source remains on `original-source`; the dependency itself is unchanged. Device verification is still pending.

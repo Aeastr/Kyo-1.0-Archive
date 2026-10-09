@@ -59,7 +59,9 @@ struct PlannerView: View {
     var planner_viewSettings_twoColumn : Bool = false
 #endif
 
-    @AppStorage("kyoPlus_hasPlus") var kyoPlus_hasPlus: Bool = false
+    // FIX: Archive access is unconditional; do not read or update a persisted purchase flag.
+
+    private var kyoPlus_hasPlus: Bool { true }
 
     var body: some View {
 
@@ -77,25 +79,17 @@ struct PlannerView: View {
 
                             PlannerWeekView(color: color, scrolled: $scrolled)
                                 .onAppear {
-                                                                   KyoPlus().checkPaymentStatus { Bool in
-                                                                       kyoPlus_hasPlus = Bool
-                                                                       if !Bool{
-                                                                           planner_View = .pages
-                                                                           planner_Style = .blocks
-                                                                       }
-                                                                   }
+
+                                                                   // FIX: No purchase check or access-state write is needed; Kyo+ is permanently unlocked.
+
                                                                }
                         }
                         else if planner_View == .timeline {
                             PlannerTimelineView(color: color, scrolled: $scrolled)
                                 .onAppear {
-                                    KyoPlus().checkPaymentStatus { Bool in
-                                        kyoPlus_hasPlus = Bool
-                                        if !Bool{
-                                            planner_View = .pages
-                                            planner_Style = .blocks
-                                        }
-                                    }
+
+                                    // FIX: No purchase check or access-state write is needed; Kyo+ is permanently unlocked.
+
                                 }
                         }
                     }
@@ -191,25 +185,17 @@ struct PlannerView: View {
                                 else if planner_View == .week{
                                     PlannerWeekView(color: color, scrolled: $scrolled)
                                         .onAppear {
-                                                                           KyoPlus().checkPaymentStatus { Bool in
-                                                                               kyoPlus_hasPlus = Bool
-                                                                               if !Bool{
-                                                                                   planner_View = .pages
-                                                                                   planner_Style = .blocks
-                                                                               }
-                                                                           }
+
+                                                                           // FIX: No purchase check or access-state write is needed; Kyo+ is permanently unlocked.
+
                                                                        }
                                 }
                                 else if planner_View == .timeline {
                                     PlannerTimelineView(color: color, scrolled: $scrolled)
                                         .onAppear {
-                                                                           KyoPlus().checkPaymentStatus { Bool in
-                                                                               kyoPlus_hasPlus = Bool
-                                                                               if !Bool{
-                                                                                   planner_View = .pages
-                                                                                   planner_Style = .blocks
-                                                                               }
-                                                                           }
+
+                                                                           // FIX: No purchase check or access-state write is needed; Kyo+ is permanently unlocked.
+
                                                                        }
                                 }
                             }

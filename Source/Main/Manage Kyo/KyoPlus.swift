@@ -82,7 +82,9 @@ struct KyoPlus: View {
     @State private var features: [Feature] = []
     @State private var Model: PaywallModel?
 
-    @AppStorage("kyoPlus_hasPlus") var kyoPlus_hasPlus: Bool = false
+    // FIX: Archive access is unconditional; do not read or update a persisted purchase flag.
+
+    private var kyoPlus_hasPlus: Bool { true }
     var body: some View {
         // FIX: Explain the included archive access instead of opening the historical purchase UI.
         // The original paywall implementation is preserved in the other branch.
@@ -113,9 +115,9 @@ struct KyoPlus: View {
                         #if !os(macOS)
                         PaywallView(displayCloseButton: false)
                             .onDisappear{
-                                KyoPlus().checkPaymentStatus { Bool in
-                                    kyoPlus_hasPlus = Bool
-                                }
+
+                                // FIX: No purchase check or access-state write is needed; Kyo+ is permanently unlocked.
+
                             }
                         #endif
                     }

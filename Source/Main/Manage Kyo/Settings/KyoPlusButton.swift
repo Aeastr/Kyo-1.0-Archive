@@ -68,9 +68,9 @@ struct KyoPlusButton: View {
                 })
                 .padding(.horizontal, 20)
                 .sheet(isPresented: $kyoPlus_showPurchaseScreen, onDismiss: {
-                    KyoPlus().checkPaymentStatus { Bool in
-                        kyoPlus_hasPlus = Bool
-                    }
+
+                    // FIX: No purchase check or access-state write is needed; Kyo+ is permanently unlocked.
+
                 }, content: {
 #if !os(visionOS)
                     KyoPlus(color: color)
@@ -95,9 +95,8 @@ struct KyoPlusButton: View {
                 })
                 .onAppear{
 
-                    KyoPlus().checkPaymentStatus { Bool in
-                        kyoPlus_hasPlus = Bool
-                    }
+                    // FIX: No purchase check or access-state write is needed; Kyo+ is permanently unlocked.
+
                 }
 
             }
@@ -171,9 +170,9 @@ struct KyoPlusButtonBinding: View {
                 })
                 .padding(.horizontal, 20)
                 .sheet(isPresented: $kyoPlus_showPurchaseScreen, onDismiss: {
-                    KyoPlus().checkPaymentStatus { Bool in
-                        kyoPlus_hasPlus = Bool
-                    }
+
+                    // FIX: No purchase check or access-state write is needed; Kyo+ is permanently unlocked.
+
                 }, content: {
 #if !os(visionOS)
                     KyoPlus(color: color)
@@ -206,14 +205,8 @@ struct KyoPlusButtonBinding: View {
         }
         .onAppear{
 
-                               KyoPlus().checkPaymentStatus { Bool in
-                                   kyoPlus_hasPlus = Bool
-                                   if !Bool{
-                                       if let actionIfNot = actionIfNot{
-                                           actionIfNot()
-                                       }
-                                   }
-                               }
+                               // FIX: No purchase check or access-state write is needed; Kyo+ is permanently unlocked.
+
                            }
 
     }

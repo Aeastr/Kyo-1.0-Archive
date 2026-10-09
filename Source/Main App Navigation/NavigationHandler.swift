@@ -35,7 +35,8 @@ struct NavigationHandler: View {
 
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.verticalSizeClass) var verticalSizeClass
-    @AppStorage("kyoPlus_hasPlus") var kyoPlus_hasPlus: Bool = false
+    // FIX: Archive access is unconditional; do not read or update a persisted purchase flag.
+    private var kyoPlus_hasPlus: Bool { true }
     @StateObject var alertManager = AlertManager()
     @State var showWeekSetup: Bool = false
 
@@ -203,9 +204,9 @@ struct NavigationHandler: View {
                                }
         }
         .onChange(of: schedule_SingleDayMode ){
-            KyoPlus().checkPaymentStatus { Bool in
-                                                kyoPlus_hasPlus = Bool
-                                            }
+
+            // FIX: No purchase check or access-state write is needed; Kyo+ is permanently unlocked.
+
             print("settings data and checking taasks")
             let dispatchGroup = DispatchGroup()
 

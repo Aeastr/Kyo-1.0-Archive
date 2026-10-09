@@ -136,7 +136,7 @@ struct Customise: View {
             })
 #endif
             .safeAreaInset(edge: .bottom, content: {
-                KyoPlusButton(color: color, kyoPlus_hasPlus: $kyoPlus_hasPlus, text: "Upgrade to Kyo+ to access more customisation options")
+                KyoPlusButton(color: color, kyoPlus_hasPlus: .constant(true), text: "Upgrade to Kyo+ to access more customisation options")
                                 .padding(.vertical, 5)
                                 .padding(.top, 20)
                                 .background(LinearGradient(stops: [Gradient.Stop(color: Color("bw").opacity(0.0), location: 0.11), Gradient.Stop(color: Color("bw").opacity(0.7), location: 0.6)], startPoint: .top, endPoint: .bottom))
@@ -171,7 +171,9 @@ struct Customise: View {
         .tint(Color(TEMPmulticolored ? "\(TEMPappAccentColor)/5" : "\(TEMPappAccentColor)/\(TEMPappAccentColorIndex)"))
     }
 
-    @AppStorage("kyoPlus_hasPlus") var kyoPlus_hasPlus: Bool = false
+    // FIX: Archive access is unconditional; do not read or update a persisted purchase flag.
+
+    private var kyoPlus_hasPlus: Bool { true }
 
     @State private var kyoPlus_showPurchaseScreen: Bool = false
 
@@ -236,7 +238,7 @@ struct Customise: View {
         }
             
         .padding(.horizontal, 20)
-        AccentColor(TEMPmulticolored: $TEMPmulticolored, TEMPappAccentColor: $TEMPappAccentColor, TEMPappAccentColorIndex: $TEMPappAccentColorIndex, kyoPlus_hasPlus: $kyoPlus_hasPlus)
+        AccentColor(TEMPmulticolored: $TEMPmulticolored, TEMPappAccentColor: $TEMPappAccentColor, TEMPappAccentColorIndex: $TEMPappAccentColorIndex, kyoPlus_hasPlus: .constant(true))
             .padding(.horizontal, 20)
             .disabled(!kyoPlus_hasPlus)
             .opacity(!kyoPlus_hasPlus ? 0.5 : 1.0)
@@ -358,9 +360,9 @@ struct Customise: View {
                                     .framelessSectionTitle()
                                     .fullScreenCover(isPresented: $kyoPlus_showPurchaseScreen, onDismiss: {
                                         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                                            KyoPlus().checkPaymentStatus { Bool in
-                                                kyoPlus_hasPlus = Bool
-                                            }
+
+                                            // FIX: No purchase check or access-state write is needed; Kyo+ is permanently unlocked.
+
                                         }
                                     }, content: {
                                         KyoPlus()
@@ -374,9 +376,8 @@ struct Customise: View {
             .padding(.horizontal, 20)
             .onAppear{
 
-                KyoPlus().checkPaymentStatus { Bool in
-                    kyoPlus_hasPlus = Bool
-                }
+                // FIX: No purchase check or access-state write is needed; Kyo+ is permanently unlocked.
+
             }
         Group{
 

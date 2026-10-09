@@ -35,7 +35,9 @@ struct ManageTeachers: View {
     var back = true
     var color: Color = Color("1")
 
-    @AppStorage("kyoPlus_hasPlus") var kyoPlus_hasPlus: Bool = false
+    // FIX: Archive access is unconditional; do not read or update a persisted purchase flag.
+
+    private var kyoPlus_hasPlus: Bool { true }
     @State var kyoPlus_showPurchaseScreen: Bool = false
 
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
@@ -107,7 +109,7 @@ struct ManageTeachers: View {
                 }
                 .safeAreaInset(edge: .bottom, content: {
 
-                               KyoPlusButtonBinding(color: color, kyoPlus_hasPlus: $kyoPlus_hasPlus, kyoPlus_showPurchaseScreen: $kyoPlus_showPurchaseScreen, text: "Upgrade to Kyo+ to attach teachers to entries", emoji: "🍎", rotation: -10, position: CGPoint(x: 10 ,y: 8), actionIfNot: {
+                               KyoPlusButtonBinding(color: color, kyoPlus_hasPlus: .constant(true), kyoPlus_showPurchaseScreen: $kyoPlus_showPurchaseScreen, text: "Upgrade to Kyo+ to attach teachers to entries", emoji: "🍎", rotation: -10, position: CGPoint(x: 10 ,y: 8), actionIfNot: {
 
                                })
                                               .padding(.bottom, 10)
@@ -248,7 +250,9 @@ struct ManageTeachers: View {
     var back = true
     var color: Color = Color("1")
 
-    @AppStorage("kyoPlus_hasPlus") var kyoPlus_hasPlus: Bool = false
+    // FIX: Archive access is unconditional; do not read or update a persisted purchase flag.
+
+    private var kyoPlus_hasPlus: Bool { true }
     @State var kyoPlus_showPurchaseScreen: Bool = false
 
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
@@ -297,7 +301,7 @@ struct ManageTeachers: View {
                            }
                 .safeAreaInset(edge: .bottom, content: {
 
-                               KyoPlusButtonBinding(color: color, kyoPlus_hasPlus: $kyoPlus_hasPlus, kyoPlus_showPurchaseScreen: $kyoPlus_showPurchaseScreen, text: "Upgrade to Kyo+ to attach teachers to entries", emoji: "🍎", rotation: -10, position: CGPoint(x: 10 ,y: 8), actionIfNot: {
+                               KyoPlusButtonBinding(color: color, kyoPlus_hasPlus: .constant(true), kyoPlus_showPurchaseScreen: $kyoPlus_showPurchaseScreen, text: "Upgrade to Kyo+ to attach teachers to entries", emoji: "🍎", rotation: -10, position: CGPoint(x: 10 ,y: 8), actionIfNot: {
 
                                })
                                               .padding(.bottom, 10)

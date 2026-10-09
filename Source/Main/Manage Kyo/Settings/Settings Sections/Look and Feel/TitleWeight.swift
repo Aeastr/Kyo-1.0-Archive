@@ -74,14 +74,8 @@ struct TitleWeight: View {
             .onAppear{
                 fontWeightIndexState = fontWeightIndex
 
-                KyoPlus().checkPaymentStatus { Bool in
-                                    if !Bool{
-                                        if fontWeightIndex != 1{
-                                            fontWeightIndexState = 1
-                                            fontWeightIndex = 1
-                                        }
-                                    }
-                                }
+                // FIX: No purchase check or access-state write is needed; Kyo+ is permanently unlocked.
+
             }
             .onDisappear{
                 fontWeightIndex = fontWeightIndexState

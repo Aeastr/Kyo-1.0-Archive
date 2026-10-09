@@ -126,7 +126,9 @@ struct todayView: View {
     var today_viewSettings_twoColumn : Bool = false
     #endif
 
-    @AppStorage("kyoPlus_hasPlus") var kyoPlus_hasPlus: Bool = false
+    // FIX: Archive access is unconditional; do not read or update a persisted purchase flag.
+
+    private var kyoPlus_hasPlus: Bool { true }
     @State var kyoPlus_showPurchaseScreen: Bool = false
 
     var body: some View {
@@ -475,7 +477,7 @@ struct todayView: View {
             })
     #endif
             .safeAreaInset(edge: .bottom) {
-                                KyoPlusButtonBinding(color: color, kyoPlus_hasPlus: $kyoPlus_hasPlus, kyoPlus_showPurchaseScreen: $kyoPlus_showPurchaseScreen, text: "Upgrade to Kyo+ to access the today view", emoji: "👀", rotation: 10 , position: CGPoint(x: 13 ,y: 8))
+                                KyoPlusButtonBinding(color: color, kyoPlus_hasPlus: .constant(true), kyoPlus_showPurchaseScreen: $kyoPlus_showPurchaseScreen, text: "Upgrade to Kyo+ to access the today view", emoji: "👀", rotation: 10 , position: CGPoint(x: 13 ,y: 8))
 #if os(visionOS)
                                     .padding(.bottom, 25)
                                     .padding(.horizontal, 5)

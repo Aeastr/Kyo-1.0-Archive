@@ -24,7 +24,9 @@ struct ColorPanel: View {
     @AppStorage("selectedHueSet") var selectedHueSet: HueSet = .defaultHues
     @State var colourName: String = ""
 
-    @AppStorage("kyoPlus_hasPlus") var kyoPlus_hasPlus: Bool = false
+    // FIX: Archive access is unconditional; do not read or update a persisted purchase flag.
+
+    private var kyoPlus_hasPlus: Bool { true }
     @State private var kyoPlus_showPurchaseScreen: Bool = false
     var body: some View {
         #if !os(macOS)

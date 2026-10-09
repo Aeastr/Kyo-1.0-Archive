@@ -76,7 +76,9 @@ struct SettingsView<Content: View>: View {
         self.navigationButtons = navigationButtons
     }
 
-    @AppStorage("kyoPlus_hasPlus") var kyoPlus_hasPlus: Bool = false
+    // FIX: Archive access is unconditional; do not read or update a persisted purchase flag.
+
+    private var kyoPlus_hasPlus: Bool { true }
     @AppStorage("data_iCloudSync") var data_iCloudSync: Bool = true
 
     var body: some View {

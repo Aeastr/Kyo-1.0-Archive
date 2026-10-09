@@ -50,7 +50,9 @@ struct PlannerSettings: View {
     var planner_viewSettings_twoColumn : Bool = false
     #endif
 
-    @AppStorage("kyoPlus_hasPlus") var kyoPlus_hasPlus: Bool = false
+    // FIX: Archive access is unconditional; do not read or update a persisted purchase flag.
+
+    private var kyoPlus_hasPlus: Bool { true }
     @State var kyoPlus_showPurchaseScreen: Bool = false
 
     @State var kyoPlus_mockSetting_planner_Style:  typeEntryViewMode = .blocks
@@ -505,7 +507,7 @@ struct PlannerSettings: View {
             .coordinateSpace(name: "scroll")
 #endif
             .safeAreaInset(edge: .bottom) {
-                               KyoPlusButtonBinding(color: color, kyoPlus_hasPlus: $kyoPlus_hasPlus, kyoPlus_showPurchaseScreen: $kyoPlus_showPurchaseScreen, text: "Upgrade to Kyo+ to further customise your planner", emoji: "🫧", rotation: -10 , position: CGPoint(x: 13 ,y: 8))
+                               KyoPlusButtonBinding(color: color, kyoPlus_hasPlus: .constant(true), kyoPlus_showPurchaseScreen: $kyoPlus_showPurchaseScreen, text: "Upgrade to Kyo+ to further customise your planner", emoji: "🫧", rotation: -10 , position: CGPoint(x: 13 ,y: 8))
                                    .padding(.bottom, 15)
                                    .padding(.horizontal, -2)
 //                                   .padding(.top, 40)

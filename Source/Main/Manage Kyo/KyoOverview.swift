@@ -10,38 +10,12 @@ import RevenueCat
 import AmethystUI
 import StoreKit
 
-// FIX: This source archive includes Kyo+ without purchases; the original purchase code remains below.
+// FIX: This source archive includes Kyo+ without purchases; historical purchase code is on original-source.
 enum KyoArchive {
     static let unlocksPlus = true
 }
 
-extension KyoPlus{
-    func checkPaymentStatus(fetchPolicy: CacheFetchPolicy = .cachedOrFetched, completion: @escaping (Bool) -> Void) {
-        // FIX: Preserve the original entitlement check below, but always grant Kyo+ in the archive.
-        if KyoArchive.unlocksPlus {
-            completion(true)
-            return
-        }
-        log("[Paywall] - checkPaymentStatus", debug: true)
-        Purchases.shared.getCustomerInfo { customerInfo, error in
-            if let info = customerInfo {
-                if info.entitlements["Plus"]?.isActive == true {
-                    log("[Paywall] - Has Plus", debug: true)
-                    completion(true)
-                } else {
-                    log("[Paywall] - Has No Placement", debug: true)
-                    completion(false)
-                }
-            } else {
-                print("couldn't get customer info")
-                completion(false)
-            }
-        }
-    }
-
-  
-
-}
+// FIX: Purchase-status checking is removed from main; historical implementation is on original-source.
 
 //struct KyoOverview: View {
 //    @AppStorage("kyoPlus_hasPlus") var kyoPlus_hasPlus: Bool = false
@@ -319,7 +293,8 @@ extension KyoPlus{
 //}
 
 struct KyoOverview: View {
-    @AppStorage("kyoPlus_hasPlus") var kyoPlus_hasPlus: Bool = false
+    // FIX: Archive access is unconditional; do not read or update a persisted purchase flag.
+    private var kyoPlus_hasPlus: Bool { true }
     // Amethyst
     var color: Color = Color.accentColor
     @State private var scrolled: Bool = false
@@ -413,9 +388,8 @@ struct KyoOverview: View {
                     }
                     .onAppear{
 
-                        KyoPlus().checkPaymentStatus { Bool in
-                            kyoPlus_hasPlus = Bool
-                        }
+                        // FIX: No purchase check or access-state write is needed; Kyo+ is permanently unlocked.
+
                     }
 #if os(visionOS)
                     .buttonStyle(PolishedButton(color: color, background: true))
@@ -449,9 +423,9 @@ struct KyoOverview: View {
                     .padding(.horizontal, 20)
 
                     .sheet(isPresented: $kyoPlus_showPurchaseScreen, onDismiss: {
-                        KyoPlus().checkPaymentStatus { Bool in
-                            kyoPlus_hasPlus = Bool
-                        }
+
+                        // FIX: No purchase check or access-state write is needed; Kyo+ is permanently unlocked.
+
                     }, content: {
 #if !os(visionOS)
                         NavigationStack{
@@ -553,9 +527,9 @@ struct KyoOverview: View {
                 }
                 .padding(.horizontal, 20)
                 .onAppear{
-                    KyoPlus().checkPaymentStatus(fetchPolicy: .notStaleCachedOrFetched) { Bool in
-                        kyoPlus_hasPlus = Bool
-                    }
+
+                    // FIX: No purchase check or access-state write is needed; Kyo+ is permanently unlocked.
+
                 }
 
 

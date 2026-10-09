@@ -42,7 +42,7 @@ RevenueCat remains at 4.41.0, with a small initializer repair for the current co
 
 ## Kyo+ is included
 
-All Kyo+ features are enabled in this archive. The original app’s purchases are no longer a usable way to unlock a build made from source, so no purchase or RevenueCat account is needed. The historical purchase code is preserved, but its SDK setup and entitlement requests are bypassed.
+All Kyo+ features are enabled in this archive. The original app’s purchases are no longer a usable way to unlock a build made from source, so no purchase or RevenueCat account is needed. Kyo+ access is a constant: there are no purchase-status checks, callbacks, or saved entitlement flags. The purchase SDK is not configured. The historical implementation remains available on `original-source`.
 
 This is an edited version, with build repairs, separate app identifiers, and the Kyo+ unlock marked by `FIX:` comments. The pre-repair version is available on [original-source](https://github.com/Aeastr/Kyo-1.0-Archive/tree/original-source). The untouched version, including old signing details and export artifacts, remains on the local `original-source-private` branch and in a private backup. A successful build was reported before the Kyo+ change; the unlock still needs a device check.
 

@@ -170,7 +170,9 @@ struct TimeSlotWorkshop: View, KeyboardReadable {
 
     @AppStorage("schedule_SingleDayMode", store: UserDefaults(suiteName: "group.com.example.kyoarchive")) var schedule_SingleDayMode: Bool = false
 
-    @AppStorage("kyoPlus_hasPlus") var kyoPlus_hasPlus: Bool = false
+    // FIX: Archive access is unconditional; do not read or update a persisted purchase flag.
+
+    private var kyoPlus_hasPlus: Bool { true }
 
 
     init(entity: TimeSlot? = nil, color1: Color = .white, color2: Color = .white){
@@ -1275,9 +1277,9 @@ struct TimeSlotWorkshop: View, KeyboardReadable {
         }
         .padding(.horizontal, 20)
         .onAppear{
-            KyoPlus().checkPaymentStatus { Bool in
-                kyoPlus_hasPlus = Bool
-            }
+
+            // FIX: No purchase check or access-state write is needed; Kyo+ is permanently unlocked.
+
         }
 
         .alert("Teacher", isPresented: $isAlertTeacherPresented) {

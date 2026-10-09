@@ -73,14 +73,8 @@ struct TitleCase: View {
             .onAppear{
 //                fontCaseIndexState = fontCaseIndex
 
-                KyoPlus().checkPaymentStatus { Bool in
-                    if !Bool{
-                        if fontCaseIndex != 0{
-                            fontCaseIndexState = 0
-                            fontCaseIndex = 0
-                        }
-                    }
-                }
+                // FIX: No purchase check or access-state write is needed; Kyo+ is permanently unlocked.
+
             }
 //            .onDisappear{
 //                fontCaseIndex = fontCaseIndexState

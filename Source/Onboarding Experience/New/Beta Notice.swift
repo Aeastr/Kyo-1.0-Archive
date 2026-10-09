@@ -18,7 +18,8 @@ struct welcomeScreen: View {
 
     @FetchRequest(sortDescriptors: []) var classes: FetchedResults<ClassEntity>
     @FetchRequest(sortDescriptors: []) var splits: FetchedResults<SplitterEntity>
-    @AppStorage("kyoPlus_hasPlus") var kyoPlus_hasPlus: Bool = false
+    // FIX: Archive access is unconditional; do not read or update a persisted purchase flag.
+    private var kyoPlus_hasPlus: Bool { true }
 
     var color: Color
     var body: some View {
@@ -68,7 +69,7 @@ struct welcomeScreen: View {
 
                     if !kyoPlus_hasPlus{
                         GroupSection(label: "Kyo+"){
-                            KyoPlusButton(color: color, kyoPlus_hasPlus: $kyoPlus_hasPlus)
+                            KyoPlusButton(color: color, kyoPlus_hasPlus: .constant(true))
                                 .padding(.horizontal, -15)
                         }
                         .padding(.horizontal, 20)
