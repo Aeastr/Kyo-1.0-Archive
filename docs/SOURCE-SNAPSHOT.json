@@ -497,7 +497,7 @@
     "Source/Localisation Files/fr.lproj/Localizable.strings": "fe557420e1e3a5824f87869bf588686033fdb605e5b74cdafca84dbc4ed6c8ff",
     "Source/Localisation Files/he.lproj/Localizable.strings": "69e9a79ba80e43a140f48378f1290d11da92e91273c3d7a424ba4b4b12af0976",
     "Source/Main App Navigation/AlertManager.swift": "420600b2c99a007feec173c11f7be6e329211411519fdeb71136e5015c3f06b4",
-    "Source/Main App Navigation/NavigationHandler.swift": "f79449aac78ba94e360521687d019bb296267413d10fc8417ad14482e3bed4f4",
+    "Source/Main App Navigation/NavigationHandler.swift": "2f83f1ce4e9c2302ae55fc2de03fd355f446eb5b487be215cb15018f232df7bb",
     "Source/Main App Navigation/Orientation.swift": "95a7f55656a4e46111249ee5f9d2dafe9392a6bf76caad945f258d9462b1b522",
     "Source/Main App Navigation/Planner Selectors.swift": "97d4ed52ad2f406b10dd9119b97f08bd8107f0bd4fbd20a2b8fd054844b5180b",
     "Source/Main App Navigation/Sidebar/ClassesSideBarSection.swift": "408c184a3848767961da3ae281f450eb7df8ca0d1c9a6a10151ede02cb3d0eec",

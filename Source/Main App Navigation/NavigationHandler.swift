@@ -183,7 +183,27 @@ struct NavigationHandler: View {
 //
 //                    }
 //                }
-        // FIX: Toggling archive Pro previews must not erase saved appearance preferences.
+        // FIX: Restore the original downgrade handler for the local Pro toggle, including its existing behavior.
+        .onChange(of: kyoPlus_hasPlus){
+            if !kyoPlus_hasPlus{
+                                   if activeAppIcon != "AppIconDefault"{
+                                       UIApplication.shared.setAlternateIconName(nil)
+                                   }
+                                   activeAppIcon = "AppIconDefault"
+
+                                   multicolored = true
+                                   appAccentColor = "Default"
+
+                                   accentImageName = "doodle1"
+
+                                   if fontDesign != .expanded || fontDesign != .OpenDyslexic{
+                                       fontDesign = .expanded
+                                   }
+
+                                   fontWeightIndex = 1
+                                   fontCaseIndex = 0
+                               }
+        }
         .onChange(of: schedule_SingleDayMode ){
 
             // FIX: No purchase check is needed; access follows the local Pro setting.

@@ -35,7 +35,7 @@ The [original-source branch](https://github.com/Aeastr/Kyo-1.0-Archive/tree/orig
 
 ## Kyo+ is included
 
-Pro is on by default. The **Pro** toggle in Settings lets you explore both the original free and Kyo+ features, and saves your choice between launches. No purchase or RevenueCat account is needed.
+Pro is on by default. The **Pro** toggle in Settings lets you explore both the original free and Kyo+ features, and saves your choice between launches. Turning Pro off applies the original downgrade behavior, including resetting appearance choices. No purchase or RevenueCat account is needed.
 
 ## Building
 

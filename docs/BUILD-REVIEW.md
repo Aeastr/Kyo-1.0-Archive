@@ -52,6 +52,8 @@ An unsigned Debug build for the connected iPhone destination succeeded with Xcod
 
 ## Local Pro toggle
 
-Pro now defaults to on and can be switched off in Settings to explore the original free feature gates. App screens and controls share the `archivePlusEnabled` AppStorage value; changes persist between launches. The archive access sheet also exposes the same toggle. No purchase callbacks or SDK setup are restored. The historical downgrade handler was removed so previewing free mode does not reset appearance preferences. Source validation is recorded separately from the pending device check.
+Pro now defaults to on and can be switched off in Settings to explore the original free feature gates. App screens and controls share the `archivePlusEnabled` AppStorage value; changes persist between launches. The archive access sheet also exposes the same toggle. No purchase callbacks or SDK setup are restored. The historical downgrade handler is retained, so switching Pro off resets appearance preferences as the original app did. Source validation is recorded separately from the pending device check.
 
 The unsigned Debug build for the iPhone destination passed with Xcode 27.1 after connecting the saved Pro toggle. On-device toggle interaction, persistence after relaunch, and repeat-launch behaviour remain to be checked.
+
+The original `NavigationHandler` downgrade handler has been restored verbatim from `original-source`, including its existing font-condition logic. It now responds to the local Pro toggle. This restoration received source comparison and syntax checks; a device check has not been repeated.
