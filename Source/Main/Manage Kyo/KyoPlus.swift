@@ -84,7 +84,17 @@ struct KyoPlus: View {
 
     @AppStorage("kyoPlus_hasPlus") var kyoPlus_hasPlus: Bool = false
     var body: some View {
-
+        // FIX: Explain the included archive access instead of opening the historical purchase UI.
+        // The original paywall implementation is preserved in the other branch.
+        if KyoArchive.unlocksPlus {
+            VStack(spacing: 12) {
+                Text("Kyo+ is included")
+                    .font(.headline)
+                Text("All Kyo+ features are enabled in this source archive. No purchase is needed.")
+                    .multilineTextAlignment(.center)
+            }
+            .padding()
+        } else {
         GeometryReader{
             let size = $0.size
             let safeArea = $0.safeAreaInsets
@@ -115,6 +125,7 @@ struct KyoPlus: View {
 
         .task {
             await loadFeatures()
+        }
         }
     }
 
@@ -179,6 +190,8 @@ struct KyoPlus: View {
     }
 
     func loadFeatures() async {
+        // FIX: Do not fetch historical purchase offerings for the unlocked archive.
+        guard !KyoArchive.unlocksPlus else { return }
         do {
             guard let offering = try await Purchases.shared.offerings().current else { return }
 

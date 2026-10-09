@@ -366,7 +366,8 @@ struct ScheduleOverviewiPad: View {
     @State private var show_WeekSlider: Bool = false
 
 
-    @State var kyoPlus_hasPlus: Bool = false
+    // FIX: These screens use local state, so enable Kyo+ here as well as in shared AppStorage.
+    @State var kyoPlus_hasPlus: Bool = KyoArchive.unlocksPlus
     @State var kyoPlus_showPurchaseScreen: Bool = false
     var body: some View {
         NavigationStack{

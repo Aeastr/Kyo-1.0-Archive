@@ -457,7 +457,7 @@
     "Source/KyoNeo/KyoNeo.entitlements": "1d957da099a3a24783b71eae3bbd17c1ced2ae1645b615031cc5a2d885682cb3",
     "Source/KyoNeo/KyoNeo.xcdatamodeld/.xccurrentversion": "97704a8960b4facceef54397a08fb5d0a456247c3627359215aa2a27df22656c",
     "Source/KyoNeo/KyoNeo.xcdatamodeld/KyoNeo.xcdatamodel/contents": "a47c6ae83e0efac43a939081e62b0436fc48adda6ccef48c2c7afbbd390940be",
-    "Source/KyoNeo/KyoNeoApp.swift": "c7f3ed35e94bd1299bbfcc950d9000eeac3988e6bfc704111504f85cf636db8e",
+    "Source/KyoNeo/KyoNeoApp.swift": "fae85d1a1f4779d88e22212ed34f98c5283a79da44605f836cc4a5f7e11c077b",
     "Source/KyoNeo/LazyPOp.swift": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
     "Source/KyoNeo/Model.xcdatamodeld/Model.xcdatamodel/contents": "25bf3a9023e5db8a2ac1e8cff6c5b331dc74bcf7bb0102b0b36b72a46b116160",
     "Source/KyoNeo/Model/SplitterModel.swift": "8a3743c9e806a2fa5928e3b59874bd5803e1b7b7e11c7ab79d96f6e271e9bfa8",
@@ -502,7 +502,7 @@
     "Source/Main App Navigation/Planner Selectors.swift": "97d4ed52ad2f406b10dd9119b97f08bd8107f0bd4fbd20a2b8fd054844b5180b",
     "Source/Main App Navigation/Sidebar/ClassesSideBarSection.swift": "915aa652fde97ac50a6dfb68565e0a415d940316783b8415b81d51222938fb18",
     "Source/Main App Navigation/Sidebar/ClubsSideBarSection.swift": "a71703f5da4b8da586e9b8cfd0b421b183cbac6809be9bfad2fa2b7801597465",
-    "Source/Main App Navigation/Sidebar/SidebarNavigation.swift": "ac5a09bdf8e1c574438698c8274748400f1c7aaed65cc0a82e4c657e8af63106",
+    "Source/Main App Navigation/Sidebar/SidebarNavigation.swift": "b3515c8f7b0ed500bd2ffdf95b1a3b4c1c99669873db0204b4fecd2609978d29",
     "Source/Main App Navigation/Sidebar/TeachersSidebarSection.swift": "0d052271d1892a9e458359c0b2b9ead2b29f3d6ac8c932145ad3139b1bf9d26e",
     "Source/Main App Navigation/TabbedNavigation.swift": "c54143814fbb5cf35f5e83403c112f9ef366bdfde2e2564be0908ece3cbed516",
     "Source/Main App Navigation/startErrors.swift": "24eac1f00f5e4f2c48c37625d6098db01879a39cdec98249bd57fcd9063a8a48",
@@ -520,12 +520,12 @@
     "Source/Main/Classes/iconMapping.swift": "a334d228454c69e8bf1f6506f8004facd524c6ab8d95dac57a285ddec2e9deba",
     "Source/Main/ComingSoon.swift": "8308e5d64eddfb3d8aa4e495927974beadf8a6e9f93be2b3b707f0cada7f26a9",
     "Source/Main/ListBackground.swift": "6e569ef380c1a1d04e64fa1bd57ec75b68219d0690e92eb775068112405092d1",
-    "Source/Main/Manage Kyo/KyoOverview.swift": "52ee6c1d2e5b12e783f7bf1ff2db106ac10af59d74ba950ff79120e56503b324",
-    "Source/Main/Manage Kyo/KyoPlus.swift": "f044018d1d17112edb4f078f2c7105173673e0ab59ebb19e1546acb3b0ea3f71",
-    "Source/Main/Manage Kyo/ScheduleOverview.swift": "529e75b189723eeee4b11f205580a11c1aa6b2611bb88d4ab361755df87fe8d8",
+    "Source/Main/Manage Kyo/KyoOverview.swift": "ddc5a3f35b3a55b252a2796fe69fc82fa48241e825e876e408d72c5e1bee2e78",
+    "Source/Main/Manage Kyo/KyoPlus.swift": "a39fac3bec4263236958feaecae87475297692c2efd42475dc8e87f41ad27671",
+    "Source/Main/Manage Kyo/ScheduleOverview.swift": "eb61b163ff5b403ba5c2cd2f19e98d2fa1e0ff6eed0f64dd935e5102798a2522",
     "Source/Main/Manage Kyo/Settings/About.swift": "735baec3a4999eede7704dba87b9226ef5ed62d4302464d83055f579d0b0c0b1",
     "Source/Main/Manage Kyo/Settings/AppleWatchSyncSettings.swift": "6d70cf201f4f9e80f011f236dc4cd2d0c4dabcdbf73a5b75c372128c9ac08d61",
-    "Source/Main/Manage Kyo/Settings/AutomaticWeeks.swift": "3da5ef8ea3bfd86269bf942ca3bab9ca29b148df992b53e0f741dbf935ee76e2",
+    "Source/Main/Manage Kyo/Settings/AutomaticWeeks.swift": "4dd76303de1d45aafeab6791cb3c389b52fb6479df7ba5adfe5320e49210e2eb",
     "Source/Main/Manage Kyo/Settings/ClassesSettings.swift": "6d78b18e06ad7c9ec179e5e2f8fa6c9e9f047c7d99d3ebbfa286632cc9c16ce6",
     "Source/Main/Manage Kyo/Settings/CosmicGoalsSync.swift": "82d951635e2a0ada1220f4bca3b461687b70c67e3f8f682a9052905e0c033825",
     "Source/Main/Manage Kyo/Settings/Customise Pages/TabBarCustomise.swift": "30da4d8197446791e7995e8751b8c6dbfca57a35af06b73ea4db7904f2eefe71",
@@ -553,7 +553,7 @@
     "Source/Main/Manage Kyo/Settings/Settings Sections/Look and Feel/TitleCase.swift": "cecda78afe0e1b694b12e17278c73c8307880fe2b5c795ac50282f1f318b53e9",
     "Source/Main/Manage Kyo/Settings/Settings Sections/Look and Feel/TitleWeight.swift": "ed8c04fbaac70a0543a702bff4ed35e250509c8a4cb4b2832e3e84cdc0c1af86",
     "Source/Main/Manage Kyo/Settings/SettingsKit/SettingsGroup.swift": "b4ba70d9f1fdcf6520883a674588568fa2f8b9fdaa5289807f3a5cf58d23d002",
-    "Source/Main/Manage Kyo/Settings/SettingsView.swift": "f0fa799c131516820a8b497c3e45744865948f4ee12704c6f24b4934fede9b28",
+    "Source/Main/Manage Kyo/Settings/SettingsView.swift": "d32efb315b7a953fa5e3183665d0c25c049631311cf679f7929d724517cc0657",
     "Source/Main/Manage Kyo/Settings/ShareSheet.swift": "f23acbf32dbf7dc2410e44bb1c087a456a45c7664d71aa4c3c221c728718c1f9",
     "Source/Main/Manage Kyo/Settings/TodaySettings.swift": "8c8f2d9690e1f941a4eb3584249c4d950575d75af67886b60c12b06cecbd0874",
     "Source/Main/Manage Kyo/Settings/debug/coredatadebugoverivew.swift": "d3b156a1133375d22b6b234e04aaff735e857179e694625218c9851c36757a39",
@@ -2167,7 +2167,13 @@
     "Source/Dependencies/RevenueCat/Package.swift",
     "Source/Dependencies/RevenueCat/Sources/Paywalls/PaywallColor.swift",
     "Source/Main/Manage Kyo/Settings/ShareSheet.swift",
-    "Source/Archive.xcconfig"
+    "Source/Archive.xcconfig",
+    "Source/Main/Manage Kyo/Settings/SettingsView.swift",
+    "Source/Main/Manage Kyo/KyoOverview.swift",
+    "Source/KyoNeo/KyoNeoApp.swift",
+    "Source/Main/Manage Kyo/KyoPlus.swift",
+    "Source/Main/Manage Kyo/Settings/AutomaticWeeks.swift",
+    "Source/Main/Manage Kyo/ScheduleOverview.swift"
   ],
   "layout": {
     "source_root": "Source",
@@ -2214,5 +2220,6 @@
       "testwidgetswatch",
       "textFunctions"
     ]
-  }
+  },
+  "archive_access": "Kyo+ enabled locally; historical purchase implementation preserved but bypassed."
 }

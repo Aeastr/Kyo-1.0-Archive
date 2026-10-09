@@ -163,6 +163,8 @@ struct SettingsView<Content: View>: View {
 //                                        GroupItem(label: "View Privacy Policy", icon: "lock.shield", link: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")),
                                         GroupItem(label: "Copy App User ID", icon: "arrow.right.doc.on.clipboard", action: {
 //                                            Text("\()")
+                                            // FIX: The archive does not configure RevenueCat; preserve the original support action below.
+                                            guard !KyoArchive.unlocksPlus else { return }
                                             UIPasteboard.general.string = Purchases.shared.appUserID
 
                                         }),

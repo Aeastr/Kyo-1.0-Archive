@@ -8,7 +8,7 @@
 
 This was the original Kyo, and quite a learning experience. It is no longer on the App Store. A lot has changed since I made it, but I still think there is value in letting people see how it worked, learn from it, and try their own ideas.
 
-This is a historical archive. The original implementation is preserved, with its folders collected under `Source/`. Bundle, app-group, and iCloud identifiers are changed for the archive, personal signing-team values are excluded, and old export binaries and logs are excluded. I am not updating it to current standards or maintaining it as another version of Kyo.
+This is an edited, buildable archive of Kyo 1.0. The original implementation is preserved, with its folders collected under `Source/`. Bundle, app-group, and iCloud identifiers are changed for the archive, personal signing-team values are excluded, and old export binaries and logs are excluded. I am not updating it to current standards or maintaining it as another version of Kyo.
 
 ## Yes, the code is rough
 
@@ -38,7 +38,13 @@ The original folders and names remain inside `Source/`. New documentation lives 
 
 The original source is also preserved on a local `original-source` branch. It is kept off GitHub because it includes historical signing identifiers and export artifacts.
 
-RevenueCat remains at 4.41.0, with a small initializer repair for the current compiler. Empty SwiftUI groups have explicit view content, and the project links only one Introspect product. These repairs preserve the original app behaviour; see [build notes](docs/BUILD-REVIEW.md).
+RevenueCat remains at 4.41.0, with a small initializer repair for the current compiler. Empty SwiftUI groups have explicit view content, and the project links only one Introspect product. These compatibility repairs are separate from the Kyo+ unlock described below; see [build notes](docs/BUILD-REVIEW.md).
+
+## Kyo+ is included
+
+All Kyo+ features are enabled in this archive. The original app’s purchases are no longer a usable way to unlock a build made from source, so no purchase or RevenueCat account is needed. The historical purchase code is preserved, but its SDK setup and entitlement requests are bypassed.
+
+This is an edited version, with build repairs, separate app identifiers, and the Kyo+ unlock marked by `FIX:` comments. The full pre-repair version is preserved on the local `original-source` branch and in a private backup. That branch is not published because it contains old signing details and export artifacts. A successful build was reported before the Kyo+ change; the unlock still needs a device check.
 
 ## Contributing
 

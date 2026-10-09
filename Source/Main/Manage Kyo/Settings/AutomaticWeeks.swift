@@ -97,7 +97,8 @@ struct AutomaticWeeks: View {
                    })
     }
 
-    @State var kyoPlus_hasPlus: Bool = false
+    // FIX: These screens use local state, so enable Kyo+ here as well as in shared AppStorage.
+    @State var kyoPlus_hasPlus: Bool = KyoArchive.unlocksPlus
     @State var kyoPlus_showPurchaseScreen: Bool = false
 
     var content: some View {

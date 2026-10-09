@@ -198,6 +198,8 @@ struct Sidebar: View {
                                              Button {
                                                                      Task {
                                                                          do {
+                                                                             // FIX: The archive has no paid membership to manage; preserve the original action below.
+                                                                             guard !KyoArchive.unlocksPlus else { return }
                                                                              try await Purchases.shared.showManageSubscriptions()
                                                                          } catch {
                                                                              print("Error showing manage subscriptions: \(error)")
@@ -205,7 +207,7 @@ struct Sidebar: View {
                                                                          }
                                                                      }
                                                                  } label: {
-                                                                     Label("Manage Membership", systemImage: "ticket")
+                                                                     Label(KyoArchive.unlocksPlus ? "Kyo+ Included" : "Manage Membership", systemImage: "ticket")
                                                                  }
                                          }
                     }

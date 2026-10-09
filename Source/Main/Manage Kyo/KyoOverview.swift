@@ -10,8 +10,18 @@ import RevenueCat
 import AmethystUI
 import StoreKit
 
+// FIX: This source archive includes Kyo+ without purchases; the original purchase code remains below.
+enum KyoArchive {
+    static let unlocksPlus = true
+}
+
 extension KyoPlus{
     func checkPaymentStatus(fetchPolicy: CacheFetchPolicy = .cachedOrFetched, completion: @escaping (Bool) -> Void) {
+        // FIX: Preserve the original entitlement check below, but always grant Kyo+ in the archive.
+        if KyoArchive.unlocksPlus {
+            completion(true)
+            return
+        }
         log("[Paywall] - checkPaymentStatus", debug: true)
         Purchases.shared.getCustomerInfo { customerInfo, error in
             if let info = customerInfo {
@@ -606,6 +616,8 @@ struct KyoOverview: View {
                     Button {
                         Task {
                             do {
+                                // FIX: The archive has no paid membership to manage; preserve the original action below.
+                                guard !KyoArchive.unlocksPlus else { return }
                                 try await Purchases.shared.showManageSubscriptions()
                             } catch {
                                 print("Error showing manage subscriptions: \(error)")
@@ -613,7 +625,7 @@ struct KyoOverview: View {
                             }
                         }
                     } label: {
-                        Label("Manage Membership", systemImage: "ticket")
+                        Label(KyoArchive.unlocksPlus ? "Kyo+ Included" : "Manage Membership", systemImage: "ticket")
                     }
                 }
                 else{

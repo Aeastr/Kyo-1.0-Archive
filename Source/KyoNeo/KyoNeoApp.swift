@@ -169,6 +169,11 @@ struct KyoNeoApp: App {
     @Environment(\.verticalSizeClass) var verticalSizeClass
 
     init(){
+        // FIX: Seed Kyo+ before views read AppStorage; keep the original SDK setup for reference.
+        if KyoArchive.unlocksPlus {
+            UserDefaults.standard.set(true, forKey: "kyoPlus_hasPlus")
+            return
+        }
         Purchases.logLevel = .debug
         Purchases.configure(withAPIKey: "appl_yYMoHVGqJNbhHxQEqWsBrLZVRqI")
     }
