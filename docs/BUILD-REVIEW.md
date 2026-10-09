@@ -20,8 +20,10 @@ The author reported a successful Xcode build on October 9, 2026, after the follo
 - Empty groups in `PlannerSettings.swift` and `ShareSheet.swift` received explicit `EmptyView()` content. Original commented-out code remains.
 - The app now links only the default Introspect product, avoiding redundant static and dynamic links to the same target.
 
-All archive edits to source and project configuration have searchable `FIX:` comments. The project and its neighbouring folders were moved together to `Source/`, without changing their relative paths. A local ignored signing configuration preserves device signing while keeping team IDs out of committed files. The pre-repair snapshot is preserved on the local `original-source` branch and in a private backup bundle.
+All archive edits to source and project configuration have searchable `FIX:` comments. The project and its neighbouring folders were moved together to `Source/`, without changing their relative paths. A local ignored signing configuration preserves device signing while keeping team IDs out of committed files. The pre-repair snapshot is preserved on the local `original-source-private` branch and in a private backup bundle.
 
 ## Kyo+ archive access
 
 Kyo+ is enabled locally at launch and returned as active by the shared entitlement check. The two screens with separate local access state also default to unlocked. The original purchase UI is bypassed with an archive explanation; SDK configuration, offerings, membership management, and support account-ID lookup are skipped. Original purchase implementations remain in source, and additions have `FIX:` comments. This unlock was added after the author’s successful build and has not yet been verified on a device.
+
+The remote `original-source` branch points to the sanitized snapshot before compiler repairs and the Kyo+ unlock. It retains the original app implementation with archive identifiers and recovered dependency setup. The untouched local branch and backup were not published.
