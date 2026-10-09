@@ -1,2 +1,7 @@
-
-KyoNeo.xcodeproj/project.xcworkspace/xcuserdata/aeastr.xcuserdatad/UserInterfaceState.xcuserstate
+# Personal Xcode state and local build/signing configuration
+.DS_Store
+xcuserdata/
+.swiftpm/
+.build/
+DerivedData/
+LocalSigning.xcconfig

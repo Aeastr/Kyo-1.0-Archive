@@ -1,20 +1,20 @@
 <div>
   <h1>Kyo 1.0 Archive <img src="docs/Images/Kyo-1.0-Archive.png" alt="Original Kyo icon" width="96" height="96" align="right"></h1>
   <p>The original Kyo: a place for your timetable, classes, and tasks.</p>
-  <p><img src="https://img.shields.io/badge/iOS-17%2B-000000?logo=apple" alt="iOS 17+"> <img src="https://img.shields.io/badge/macOS-14%2B-000000?logo=apple" alt="macOS 14+"> <img src="https://img.shields.io/badge/watchOS-10%2B-000000?logo=apple" alt="watchOS 10+"> <img src="https://img.shields.io/badge/Swift-5_language_mode-F05138?logo=swift&amp;logoColor=white" alt="Swift 5 language mode"></p>
+  <p><img src="https://img.shields.io/badge/iOS-17%2B-000000?logo=apple" alt="iOS 17+"> <img src="https://img.shields.io/badge/iPadOS-17%2B-000000?logo=apple" alt="iPadOS 17+"> <img src="https://img.shields.io/badge/Mac-Designed_for_iPad-000000?logo=apple" alt="Mac (Designed for iPad)"> <img src="https://img.shields.io/badge/Apple_Vision-000000?logo=apple" alt="Apple Vision"> <img src="https://img.shields.io/badge/watchOS-10%2B-000000?logo=apple" alt="watchOS 10+"> <img src="https://img.shields.io/badge/Swift-5_language_mode-F05138?logo=swift&amp;logoColor=white" alt="Swift 5 language mode"></p>
 </div>
 
 ## Why share this?
 
 This was the original Kyo, and quite a learning experience. It is no longer on the App Store. A lot has changed since I made it, but I still think there is value in letting people see how it worked, learn from it, and try their own ideas.
 
-This is a historical archive. The original implementation and folder names are preserved. Bundle, app-group, and iCloud identifiers are changed for the archive, signing-team values are blank, and old export binaries and logs are excluded. I am not updating it to current standards or maintaining it as another version of Kyo.
+This is a historical archive. The original implementation is preserved, with its folders collected under `Source/`. Bundle, app-group, and iCloud identifiers are changed for the archive, personal signing-team values are excluded, and old export binaries and logs are excluded. I am not updating it to current standards or maintaining it as another version of Kyo.
 
 ## Yes, the code is rough
 
 I know. There are questionable names, commented-out experiments, and more debug prints than anyone needed. I was learning, and it shows.
 
-I have left that code as it was, apart from the identifiers needed to keep the archive separate from the original app. It is not a tidied-up version of how I wish I had written it. Hopefully there is something useful in here, even if some of it is what not to do.
+I have left that code as it was, apart from separate archive identifiers and small build compatibility repairs marked with `FIX:` comments. It is not a tidied-up version of how I wish I had written it. Hopefully there is something useful in here, even if some of it is what not to do.
 
 ## Where it fits
 
@@ -28,13 +28,17 @@ This snapshot comes from legacy commit `ef3ed674719c865a25a5e3b724f3be601be9b614
 
 ## Explore the source
 
-Open `KyoNeo.xcodeproj` in Xcode. The main app target is `KyoNeo`; the repository also contains its widgets, Watch code, and other companion targets.
+Open [`Source/KyoNeo.xcodeproj`](Source/KyoNeo.xcodeproj) in Xcode. The main app target is `KyoNeo`; the repository also contains its widgets, Watch code, and other companion targets.
 
-The badges reflect the main project's historical deployment settings. The complications extension specifies watchOS 10.2. Dependency versions are recorded in the original `Package.resolved`. Some dependencies or services may have changed or become unavailable since then, so this archive is not a promise of a working build with today's tools.
+The main app lists iPhone, iPad, Mac (Designed for iPad), and Apple Vision as destinations. The repository also includes an Apple Watch app. iPhone and iPad require iOS/iPadOS 17 or later; the Mac deployment setting is macOS 14. These are the project's configured destinations, rather than a claim that each has been tested with current tools. The complications extension specifies watchOS 10.2. Remote dependency versions are recorded in `Package.resolved`; recovered and repaired dependencies are included locally. Some dependencies or services may have changed or become unavailable since then, so future toolchains may need further repairs. The author reported a successful build after the compatibility fixes on October 9, 2026.
 
-The original database package and SymbolPicker are included at the revisions pinned by this source snapshot. SymbolPicker’s former repository is unavailable; its exact commit was recovered from the upstream fork network. A stale reference to a missing Desktop StoreKit testing file was removed. The archive uses `com.example.kyoarchive`, with matching app-group and iCloud identifiers. Select your own signing team and configure the archive identifiers for your account before building. These identifiers are separate from the original app; external service configuration still needs your attention.
+The original database package and SymbolPicker are included at the revisions pinned by this source snapshot. SymbolPicker’s former repository is unavailable; its exact commit was recovered from the upstream fork network. A stale reference to a missing Desktop StoreKit testing file was removed. The archive uses `com.example.kyoarchive`, with matching app-group and iCloud identifiers. For device signing, create `Source/LocalSigning.xcconfig` with `KYO_ARCHIVE_DEVELOPMENT_TEAM = YOUR_TEAM_ID`, or select your team in Xcode. The local configuration is ignored by Git. Configure the archive identifiers for your account before building. These identifiers are separate from the original app; external service configuration still needs your attention.
 
-The original folders and names are left alone so this remains a useful record of the app. New documentation lives in [the DocC catalog](docs/KyoLegacy.docc/KyoLegacy.md).
+The original folders and names remain inside `Source/`. New documentation lives in [the DocC catalog](docs/KyoLegacy.docc/KyoLegacy.md), and [Media](Media/README.md) is reserved for historical screenshots, social posts, and press material.
+
+The original source is also preserved on a local `original-source` branch. It is kept off GitHub because it includes historical signing identifiers and export artifacts.
+
+RevenueCat remains at 4.41.0, with a small initializer repair for the current compiler. Empty SwiftUI groups have explicit view content, and the project links only one Introspect product. These repairs preserve the original app behaviour; see [build notes](docs/BUILD-REVIEW.md).
 
 ## Contributing
 

@@ -1,0 +1,3 @@
+// FIX: Keep personal signing out of the archive. Create LocalSigning.xcconfig beside this file.
+// Set KYO_ARCHIVE_DEVELOPMENT_TEAM there, or supply DEVELOPMENT_TEAM when building.
+#include? "LocalSigning.xcconfig"
