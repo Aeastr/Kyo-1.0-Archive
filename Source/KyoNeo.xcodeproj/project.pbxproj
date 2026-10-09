@@ -1,6 +1,5 @@
 // !$*UTF8*$!
-// FIX: Use archive identifiers to keep this build and its data separate from the original app.
-// FIX: Removed the missing Desktop Organiser.storekit resource reference.
+// FIX: Remove RevenueCat and RevenueCatUI products; archive Kyo+ access is unconditional.
 {
 	archiveVersion = 1;
 	classes = {
@@ -140,8 +139,6 @@
 		9A70C4802BED194B0042AC08 /* ListBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A70C47F2BED194B0042AC08 /* ListBackground.swift */; };
 		9A70C4822BED24400042AC08 /* TeachersListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A70C4812BED243F0042AC08 /* TeachersListSection.swift */; };
 		9A70C4852BED3B3E0042AC08 /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = 9A70C4842BED3B3E0042AC08 /* SwiftUIIntrospect */; };
-		9A70C4872BED3B3E0042AC08 /* SwiftUIIntrospect-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 9A70C4862BED3B3E0042AC08 /* SwiftUIIntrospect-Dynamic */; };
-		9A70C4892BED3B3E0042AC08 /* SwiftUIIntrospect-Static in Frameworks */ = {isa = PBXBuildFile; productRef = 9A70C4882BED3B3E0042AC08 /* SwiftUIIntrospect-Static */; };
 		9A7138FE2A7DE2C700D82966 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A341E6529BF385400ABE7E6 /* WidgetKit.framework */; };
 		9A7138FF2A7DE2C700D82966 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A341E6729BF385400ABE7E6 /* SwiftUI.framework */; };
 		9A7139022A7DE2C700D82966 /* WidgetsBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7139012A7DE2C700D82966 /* WidgetsBundle.swift */; };
@@ -299,8 +296,6 @@
 		9AE234802A881C9F00B2848F /* Task Widgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A990E6A2A81568D0022409C /* Task Widgets.swift */; };
 		9AE234822A8825D500B2848F /* scaledFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE234812A8825C200B2848F /* scaledFrame.swift */; };
 		9AE51C922A7E87EF001722C5 /* ColorBrightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A341E2B29B795A200ABE7E6 /* ColorBrightness.swift */; };
-		9AE605262B54FB8300F2BF43 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 9AE605252B54FB8300F2BF43 /* RevenueCat */; };
-		9AE605282B54FB8300F2BF43 /* RevenueCatUI in Frameworks */ = {isa = PBXBuildFile; productRef = 9AE605272B54FB8300F2BF43 /* RevenueCatUI */; };
 		9AE6052B2B54FBEE00F2BF43 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; platformFilters = (ios, macos, ); productRef = 9AE6052A2B54FBEE00F2BF43 /* SDWebImageSwiftUI */; };
 		9AE6FCD32A9FA66D000013E0 /* EntryBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6FCD22A9FA66D000013E0 /* EntryBlock.swift */; };
 		9AE6FCD52A9FA70A000013E0 /* EntryThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE6FCD42A9FA70A000013E0 /* EntryThread.swift */; };
@@ -384,7 +379,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		A1C001000000000000000001 /* Archive.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Archive.xcconfig; sourceTree = "<group>"; };
 		9A00C0882A60425D0079BEAC /* TodaySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaySettings.swift; sourceTree = "<group>"; };
 		9A00C08A2A60A3E70079BEAC /* Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
 		9A00C08E2A60BE740079BEAC /* WeekManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekManager.swift; sourceTree = "<group>"; };
@@ -645,6 +639,7 @@
 		9AFD053729285D4600E61EAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9AFFEC0629CDC3F400EAA23B /* regularButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = regularButton.swift; sourceTree = "<group>"; };
 		9AFFEC0829CDC54A00EAA23B /* old.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = old.swift; sourceTree = "<group>"; };
+		A1C001000000000000000001 /* Archive.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Archive.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -654,8 +649,6 @@
 			files = (
 				9AE6052B2B54FBEE00F2BF43 /* SDWebImageSwiftUI in Frameworks */,
 				9A75E2092AC3B6E100456808 /* Hex in Frameworks */,
-				9AE605282B54FB8300F2BF43 /* RevenueCatUI in Frameworks */,
-				/* FIX: Link only the default Introspect product. Redundant static/dynamic links caused a missing framework error. Package source is unchanged. */
 				9A70C4852BED3B3E0042AC08 /* SwiftUIIntrospect in Frameworks */,
 				9AC36FCE2A6B4F0A00F20D9D /* ConfettiSwiftUI in Frameworks */,
 				9ABA228C29F4707F0024AEA1 /* DeviceKit in Frameworks */,
@@ -664,7 +657,6 @@
 				9A184CC72AA782DA00639F03 /* Shift in Frameworks */,
 				9A3600702AD6AD2E00E34BE6 /* AmethystUI in Frameworks */,
 				9A8F4862298275C600B8CABA /* Popovers in Frameworks */,
-				9AE605262B54FB8300F2BF43 /* RevenueCat in Frameworks */,
 				9A453CBD2A5E6255000C5108 /* SymbolPicker in Frameworks */,
 				9A5390A12BBE5C2000F45D71 /* StoreKit.framework in Frameworks */,
 				9AD32CE82A9BA64F001ED54B /* HighlightedTextEditor in Frameworks */,
@@ -1555,8 +1547,6 @@
 				9A184CC62AA782DA00639F03 /* Shift */,
 				9A75E2082AC3B6E100456808 /* Hex */,
 				9A36006F2AD6AD2E00E34BE6 /* AmethystUI */,
-				9AE605252B54FB8300F2BF43 /* RevenueCat */,
-				9AE605272B54FB8300F2BF43 /* RevenueCatUI */,
 				9AE6052A2B54FBEE00F2BF43 /* SDWebImageSwiftUI */,
 				9A70C4842BED3B3E0042AC08 /* SwiftUIIntrospect */,
 			);
@@ -1682,8 +1672,7 @@
 				9AD32CE62A9BA5E3001ED54B /* XCRemoteSwiftPackageReference "HighlightedTextEditor" */,
 				9A184CC52AA782DA00639F03 /* XCRemoteSwiftPackageReference "Shift" */,
 				9A75E2072AC3B6E100456808 /* XCRemoteSwiftPackageReference "hex" */,
-				9A36006E2AD6AD2E00E34BE6 /* XCRemoteSwiftPackageReference "AmethystUI" */,
-				9AE605242B54FB8300F2BF43 /* XCLocalSwiftPackageReference "Dependencies/RevenueCat" */,
+				9A36006E2AD6AD2E00E34BE6 /* XCLocalSwiftPackageReference "Dependencies/AmethystUI" */,
 				9AE605292B54FBEE00F2BF43 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 				9A70C4832BED3B3E0042AC08 /* XCRemoteSwiftPackageReference "swiftui-introspect" */,
 			);
@@ -2102,7 +2091,6 @@
 /* Begin XCBuildConfiguration section */
 		9A0324952928405F003CF14F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			/* FIX: Load optional local signing without publishing a personal team ID. */
 			baseConfigurationReference = A1C001000000000000000001 /* Archive.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -2166,7 +2154,6 @@
 		};
 		9A0324962928405F003CF14F /* Release */ = {
 			isa = XCBuildConfiguration;
-			/* FIX: Load optional local signing without publishing a personal team ID. */
 			baseConfigurationReference = A1C001000000000000000001 /* Archive.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -2241,7 +2228,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KyoNeo/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Kyo;
-				INFOPLIST_KEY_ITSEncryptionExportComplianceCode = "$(PRODUCT_NAME)";
+				INFOPLIST_KEY_ITSEncryptionExportComplianceCode = Kyo;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "KyoNeo needs your permission to create events";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow Kyo to access your location while using the app to provide estimated travel times, optimal departure suggestions, and location tagging for classes and events";
@@ -2300,7 +2287,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KyoNeo/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Kyo;
-				INFOPLIST_KEY_ITSEncryptionExportComplianceCode = "$(PRODUCT_NAME)";
+				INFOPLIST_KEY_ITSEncryptionExportComplianceCode = Kyo;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "KyoNeo needs your permission to create events";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow Kyo to access your location while using the app to provide estimated travel times, optimal departure suggestions, and location tagging for classes and events";
@@ -2701,13 +2688,7 @@
 /* Begin XCLocalSwiftPackageReference section */
 		9A453CBB2A5E6255000C5108 /* XCLocalSwiftPackageReference "Dependencies/SymbolPicker" */ = {
 			isa = XCLocalSwiftPackageReference;
-			// FIX: Use the recovered original pinned SymbolPicker source; its former remote is unavailable.
 			relativePath = Dependencies/SymbolPicker;
-		};
-		9AE605242B54FB8300F2BF43 /* XCLocalSwiftPackageReference "Dependencies/RevenueCat" */ = {
-			isa = XCLocalSwiftPackageReference;
-			// FIX: Use RevenueCat 4.41.0 with the recorded Xcode 27.1 initializer repair.
-			relativePath = Dependencies/RevenueCat;
 		};
 /* End XCLocalSwiftPackageReference section */
 
@@ -2720,13 +2701,10 @@
 				minimumVersion = 0.9.0;
 			};
 		};
-		9A36006E2AD6AD2E00E34BE6 /* XCRemoteSwiftPackageReference "AmethystUI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/FauxFoxApps/AmethystUI.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.4.8;
-			};
+		9A36006E2AD6AD2E00E34BE6 /* XCLocalSwiftPackageReference "Dependencies/AmethystUI" */ = {
+			isa = XCLocalSwiftPackageReference;
+			/* FIX: Use the pinned AmethystUI source with the deferred safe-area lookup repair. */
+			relativePath = Dependencies/AmethystUI;
 		};
 		9A58A95429CCA4FA006A796E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -2826,7 +2804,7 @@
 		};
 		9A36006F2AD6AD2E00E34BE6 /* AmethystUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9A36006E2AD6AD2E00E34BE6 /* XCRemoteSwiftPackageReference "AmethystUI" */;
+			package = 9A36006E2AD6AD2E00E34BE6 /* XCLocalSwiftPackageReference "Dependencies/AmethystUI" */;
 			productName = AmethystUI;
 		};
 		9A453CBC2A5E6255000C5108 /* SymbolPicker */ = {
@@ -2838,16 +2816,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9A70C4832BED3B3E0042AC08 /* XCRemoteSwiftPackageReference "swiftui-introspect" */;
 			productName = SwiftUIIntrospect;
-		};
-		9A70C4862BED3B3E0042AC08 /* SwiftUIIntrospect-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9A70C4832BED3B3E0042AC08 /* XCRemoteSwiftPackageReference "swiftui-introspect" */;
-			productName = "SwiftUIIntrospect-Dynamic";
-		};
-		9A70C4882BED3B3E0042AC08 /* SwiftUIIntrospect-Static */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9A70C4832BED3B3E0042AC08 /* XCRemoteSwiftPackageReference "swiftui-introspect" */;
-			productName = "SwiftUIIntrospect-Static";
 		};
 		9A75E2082AC3B6E100456808 /* Hex */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -2883,16 +2851,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9AD32CE62A9BA5E3001ED54B /* XCRemoteSwiftPackageReference "HighlightedTextEditor" */;
 			productName = HighlightedTextEditor;
-		};
-		9AE605252B54FB8300F2BF43 /* RevenueCat */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9AE605242B54FB8300F2BF43 /* XCLocalSwiftPackageReference "Dependencies/RevenueCat" */;
-			productName = RevenueCat;
-		};
-		9AE605272B54FB8300F2BF43 /* RevenueCatUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9AE605242B54FB8300F2BF43 /* XCLocalSwiftPackageReference "Dependencies/RevenueCat" */;
-			productName = RevenueCatUI;
 		};
 		9AE6052A2B54FBEE00F2BF43 /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;

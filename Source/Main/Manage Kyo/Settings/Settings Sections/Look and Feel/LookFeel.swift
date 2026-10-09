@@ -1,3 +1,4 @@
+// FIX: RevenueCat is removed from the unlocked archive; original purchase code is on original-source.
 //
 //  Customise.swift
 //  KyoNeo
@@ -7,7 +8,6 @@
 
 import SwiftUI
 import AmethystUI
-import RevenueCatUI
 import UniformTypeIdentifiers
 
 enum landscapeTabBarSide: String, CaseIterable{

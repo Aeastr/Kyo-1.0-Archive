@@ -1,3 +1,4 @@
+// FIX: RevenueCat is removed from the unlocked archive; original purchase code is on original-source.
 // FIX: Use archive identifiers to keep this build and its data separate from the original app.
 //
 //  NavigationHandler.swift
@@ -7,7 +8,6 @@
 //
 
 import SwiftUI 
-import RevenueCat
 #if os(iOS) || os(visionOS)
 struct NavigationHandler: View {
     //Kyo+ Props

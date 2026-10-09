@@ -190,7 +190,8 @@ struct ClassSection: View {
             }
 
         }
-        .onChangeOf(isExpanded) { newValue in
+        // FIX: Use SwiftUI directly after removing the RevenueCatUI onChangeOf helper.
+        .onChange(of: isExpanded) { _, newValue in
             isExpandedSave = newValue
         }
         .onAppear {

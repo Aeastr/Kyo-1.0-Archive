@@ -1,3 +1,4 @@
+// FIX: RevenueCat is removed from the unlocked archive; original purchase code is on original-source.
 //
 //  SettingsView.swift
 //  KyoNeo
@@ -7,7 +8,6 @@
 
 import SwiftUI
 import AmethystUI
-import RevenueCat
 enum prefCol: String, Codable {
     case followSys
     case light
@@ -163,13 +163,8 @@ struct SettingsView<Content: View>: View {
                                         GroupItem(label: "Contact Support", icon: "questionmark.circle.fill", link: URL(string: "mailto:kyosupport@aethers.world")),
                                        GroupItem(label: "View UELA", icon: "doc.text.fill", link: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")),
 //                                        GroupItem(label: "View Privacy Policy", icon: "lock.shield", link: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")),
-                                        GroupItem(label: "Copy App User ID", icon: "arrow.right.doc.on.clipboard", action: {
-//                                            Text("\()")
-                                            // FIX: The archive does not configure RevenueCat; preserve the original support action below.
-                                            guard !KyoArchive.unlocksPlus else { return }
-                                            UIPasteboard.general.string = Purchases.shared.appUserID
+                                        // FIX: Remove the RevenueCat support-ID action with the purchase SDK.
 
-                                        }),
 //                                        GroupItem(label: "Report a Bug", icon: "ladybug", link: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")),
                                       ])
 

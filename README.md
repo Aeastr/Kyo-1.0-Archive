@@ -38,11 +38,11 @@ The original folders and names remain inside `Source/`. New documentation lives 
 
 The [original-source branch](https://github.com/Aeastr/Kyo-1.0-Archive/tree/original-source) preserves the snapshot before the compiler repairs and Kyo+ unlock. It includes the archive identifier and dependency setup changes, with personal signing details and old export artifacts excluded.
 
-RevenueCat remains at 4.41.0, with a small initializer repair for the current compiler. Empty SwiftUI groups have explicit view content, and the project links only one Introspect product. These compatibility repairs are separate from the Kyo+ unlock described below; see [build notes](docs/BUILD-REVIEW.md).
+AmethystUI is included at its pinned revision with a deferred window-inset lookup to avoid the observed launch layout cycle. Empty SwiftUI groups have explicit view content, and the project links only one Introspect product. These compatibility repairs are separate from the Kyo+ unlock described below; see [build notes](docs/BUILD-REVIEW.md).
 
 ## Kyo+ is included
 
-All Kyo+ features are enabled in this archive. The original app’s purchases are no longer a usable way to unlock a build made from source, so no purchase or RevenueCat account is needed. Kyo+ access is a constant: there are no purchase-status checks, callbacks, or saved entitlement flags. The purchase SDK is not configured. The historical implementation remains available on `original-source`.
+All Kyo+ features are enabled in this archive. The original app’s purchases are no longer a usable way to unlock a build made from source, so no purchase or RevenueCat account is needed. Kyo+ access is a constant: there are no purchase-status checks, callbacks, or saved entitlement flags. RevenueCat and its purchase UI have been removed from `main`. The historical implementation remains available on `original-source`.
 
 This is an edited version, with build repairs, separate app identifiers, and the Kyo+ unlock marked by `FIX:` comments. The pre-repair version is available on [original-source](https://github.com/Aeastr/Kyo-1.0-Archive/tree/original-source). The untouched version, including old signing details and export artifacts, remains on the local `original-source-private` branch and in a private backup. A successful build was reported before the Kyo+ change; the unlock still needs a device check.
 

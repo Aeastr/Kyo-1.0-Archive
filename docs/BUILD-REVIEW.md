@@ -35,3 +35,17 @@ The author reported a white screen after the unlock changes. A paused device sta
 ## Permanent Kyo+ access
 
 The callback-based archive unlock has been replaced by read-only `true` access values and constant bindings. Active purchase-status requests and their callbacks have been removed, along with SDK setup and launch-time entitlement writes. This avoids making entitlement state changes during view updates. Historical source remains on `original-source`; the dependency itself is unchanged. Device verification is still pending.
+
+## RevenueCat removed from main
+
+RevenueCat and RevenueCatUI imports, package products, vendored SDK source, historical purchase UI, membership actions, and support-account ID lookup have been removed. The archive keeps a small Kyo+ included-access view and permanent unlocked access. The original branch retains the original purchase implementation and dependency setup.
+
+## White screen investigation
+
+A running iPhone build showed a white screen and layout-cycle warnings. Pausing it in Xcode showed the main thread in `AG::Graph::UpdateStack::push_slow`, reached through `UIWindow.safeAreaInsets`, `FluidTabBar.hasHomeIndicator`, and the tab bar’s `safeAreaInset`. After resuming, Xcode reported about 99% CPU. The database had already loaded.
+
+AmethystUI 1.5.1 is now included locally with a targeted repair: the original window-inset lookup runs asynchronously after appearance and its result is cached for view evaluation. The original lookup logic and bar remain. Device verification of this repair is pending.
+
+## Compilation after purchase SDK removal
+
+An unsigned Debug build for the connected iPhone destination succeeded with Xcode 27.1 after removing RevenueCat, replacing its three sidebar `onChangeOf` helpers with native SwiftUI `onChange`, and applying the deferred AmethystUI inset lookup. Device installation and repeat-launch verification are still pending.

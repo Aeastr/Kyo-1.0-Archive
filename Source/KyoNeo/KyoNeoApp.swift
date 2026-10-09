@@ -1,3 +1,4 @@
+// FIX: RevenueCat is removed from the unlocked archive; original purchase code is on original-source.
 //
 //  KyoNeoApp.swift
 //  KyoNeo
@@ -7,7 +8,6 @@
 
 
 import SwiftUI
-import RevenueCat
 #if canImport(WidgetKit)
 import WidgetKit
 #endif

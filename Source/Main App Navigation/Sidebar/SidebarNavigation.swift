@@ -1,3 +1,4 @@
+// FIX: RevenueCat is removed from the unlocked archive; original purchase code is on original-source.
 // FIX: Use archive identifiers to keep this build and its data separate from the original app.
 //
 //  SidebarNavigation.swift
@@ -8,7 +9,6 @@
 
 import SwiftUI
 import CoreData
-import RevenueCat
 #if canImport(RiveRuntime)
 import RiveRuntime
 let icon1 = RiveViewModel(fileName: "iosicons", stateMachineName: "TODAY_state", artboardName: "TODAY")
@@ -197,19 +197,13 @@ struct Sidebar: View {
 
                                          if kyoPlus_hasPlus{
                                              Button {
-                                                                     Task {
-                                                                         do {
-                                                                             // FIX: The archive has no paid membership to manage; preserve the original action below.
-                                                                             guard !KyoArchive.unlocksPlus else { return }
-                                                                             try await Purchases.shared.showManageSubscriptions()
-                                                                         } catch {
-                                                                             print("Error showing manage subscriptions: \(error)")
-                                                                             // Handle the error appropriately, possibly with an alert to the user.
-                                                                         }
-                                                                     }
+
+                                                                     // FIX: No subscription management exists in the unlocked archive.
+
                                                                  } label: {
-                                                                     Label(KyoArchive.unlocksPlus ? "Kyo+ Included" : "Manage Membership", systemImage: "ticket")
+                                                                     Label("Kyo+ Included", systemImage: "ticket")
                                                                  }
+                                                                     .disabled(true)
                                          }
                     }
 

@@ -1,3 +1,4 @@
+// FIX: RevenueCat is removed from the unlocked archive; original purchase code is on original-source.
 //
 //  AppIcon.swift
 //  KyoNeo
@@ -6,7 +7,6 @@
 //
 
 import SwiftUI
-import RevenueCatUI
 
 #if os(iOS) || os(visionOS)
 struct AppIcon: View {
