@@ -42,9 +42,9 @@ AmethystUI is included at its pinned revision with a deferred window-inset looku
 
 ## Kyo+ is included
 
-All Kyo+ features are enabled in this archive. The original app’s purchases are no longer a usable way to unlock a build made from source, so no purchase or RevenueCat account is needed. Kyo+ access is a constant: there are no purchase-status checks, callbacks, or saved entitlement flags. RevenueCat and its purchase UI have been removed from `main`. The historical implementation remains available on `original-source`.
+Pro is on by default. A **Pro** toggle in Settings lets you explore the original free and Kyo+ features; your choice is saved between launches. No purchase or RevenueCat account is needed. Feature gates read this local setting directly, without purchase checks or callbacks. RevenueCat and its purchase UI have been removed from `main`. The historical implementation remains available on `original-source`.
 
-This is an edited version, with build repairs, separate app identifiers, and the Kyo+ unlock marked by `FIX:` comments. The pre-repair version is available on [original-source](https://github.com/Aeastr/Kyo-1.0-Archive/tree/original-source). The untouched version, including old signing details and export artifacts, remains on the local `original-source-private` branch and in a private backup. A successful build was reported before the Kyo+ change; the unlock still needs a device check.
+This is an edited version, with build repairs, separate app identifiers, and the local Pro toggle marked by `FIX:` comments. The pre-repair version is available on [original-source](https://github.com/Aeastr/Kyo-1.0-Archive/tree/original-source). The untouched version, including old signing details and export artifacts, remains on the local `original-source-private` branch and in a private backup. The archive compiled successfully after the purchase SDK removal. The Pro toggle still needs a device check.
 
 ## Contributing
 

@@ -10,11 +10,6 @@ import SwiftUI
 import AmethystUI
 import StoreKit
 
-// FIX: This source archive includes Kyo+ without purchases; historical purchase code is on original-source.
-enum KyoArchive {
-    static let unlocksPlus = true
-}
-
 // FIX: Purchase-status checking is removed from main; historical implementation is on original-source.
 
 //struct KyoOverview: View {
@@ -292,8 +287,8 @@ enum KyoArchive {
 //}
 
 struct KyoOverview: View {
-    // FIX: Archive access is unconditional; do not read or update a persisted purchase flag.
-    private var kyoPlus_hasPlus: Bool { true }
+    // FIX: Read the local Pro preview setting, defaulting to on; no purchase checks are used.
+    @AppStorage("archivePlusEnabled") private var kyoPlus_hasPlus = true
     // Amethyst
     var color: Color = Color.accentColor
     @State private var scrolled: Bool = false
@@ -387,7 +382,7 @@ struct KyoOverview: View {
                     }
                     .onAppear{
 
-                        // FIX: No purchase check or access-state write is needed; Kyo+ is permanently unlocked.
+                        // FIX: No purchase check is needed; access follows the local Pro setting.
 
                     }
 #if os(visionOS)
@@ -423,7 +418,7 @@ struct KyoOverview: View {
 
                     .sheet(isPresented: $kyoPlus_showPurchaseScreen, onDismiss: {
 
-                        // FIX: No purchase check or access-state write is needed; Kyo+ is permanently unlocked.
+                        // FIX: No purchase check is needed; access follows the local Pro setting.
 
                     }, content: {
 #if !os(visionOS)
@@ -527,7 +522,7 @@ struct KyoOverview: View {
                 .padding(.horizontal, 20)
                 .onAppear{
 
-                    // FIX: No purchase check or access-state write is needed; Kyo+ is permanently unlocked.
+                    // FIX: No purchase check is needed; access follows the local Pro setting.
 
                 }
 

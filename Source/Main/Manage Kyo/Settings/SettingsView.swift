@@ -76,9 +76,9 @@ struct SettingsView<Content: View>: View {
         self.navigationButtons = navigationButtons
     }
 
-    // FIX: Archive access is unconditional; do not read or update a persisted purchase flag.
+    // FIX: Read the local Pro preview setting, defaulting to on; no purchase checks are used.
 
-    private var kyoPlus_hasPlus: Bool { true }
+    @AppStorage("archivePlusEnabled") private var kyoPlus_hasPlus = true
     @AppStorage("data_iCloudSync") var data_iCloudSync: Bool = true
 
     var body: some View {
@@ -89,6 +89,15 @@ struct SettingsView<Content: View>: View {
                 ScrollDetector(scrolled: $scrolled)
 #endif
                 Group{
+                    // FIX: Let archive users explore free and Pro features without purchases.
+                    GroupSection(label: "Archive") {
+                        Toggle("Pro", isOn: $kyoPlus_hasPlus)
+                            .tint(color)
+                            .neoSettingsCard()
+                        Text("Explore the original free and Pro features. No purchase needed.")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
                     GroupSection(label: "Personal") {
                         Text("Kyo will display your name in certain parts of the app")
                             .font(.caption2)
@@ -225,6 +234,8 @@ struct SettingsView<Content: View>: View {
 }
 #elseif os(macOS)
 struct SettingsView: View {
+    // FIX: Share the same saved Pro preview setting on Mac; default to on.
+    @AppStorage("archivePlusEnabled") private var kyoPlus_hasPlus = true
     @AppStorage("terminology") var terminology: terminologySettings = .regular
     @State private var selectedTabIndex: Int = 1 // Set the default index to 1 (MyInfo)
 
@@ -236,6 +247,14 @@ struct SettingsView: View {
     var body: some View{
         TabView(selection: $selectedTabIndex) {
             ScrollView{
+                // FIX: Allow local free/Pro previews without the purchase SDK.
+                Toggle("Pro", isOn: $kyoPlus_hasPlus)
+                    .neoSettingsCard()
+                    .padding(.horizontal, 20)
+                Text("Explore the original free and Pro features. No purchase needed.")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                    .padding(.horizontal, 20)
                Text("General")
                     .sectionTitle()
 

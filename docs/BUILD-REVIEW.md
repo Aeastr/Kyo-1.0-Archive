@@ -49,3 +49,9 @@ AmethystUI 1.5.1 is now included locally with a targeted repair: the original wi
 ## Compilation after purchase SDK removal
 
 An unsigned Debug build for the connected iPhone destination succeeded with Xcode 27.1 after removing RevenueCat, replacing its three sidebar `onChangeOf` helpers with native SwiftUI `onChange`, and applying the deferred AmethystUI inset lookup. Device installation and repeat-launch verification are still pending.
+
+## Local Pro toggle
+
+Pro now defaults to on and can be switched off in Settings to explore the original free feature gates. App screens and controls share the `archivePlusEnabled` AppStorage value; changes persist between launches. The archive access sheet also exposes the same toggle. No purchase callbacks or SDK setup are restored. The historical downgrade handler was removed so previewing free mode does not reset appearance preferences. Source validation is recorded separately from the pending device check.
+
+The unsigned Debug build for the iPhone destination passed with Xcode 27.1 after connecting the saved Pro toggle. On-device toggle interaction, persistence after relaunch, and repeat-launch behaviour remain to be checked.

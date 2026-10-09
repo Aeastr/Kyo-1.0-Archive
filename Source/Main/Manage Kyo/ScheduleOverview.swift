@@ -366,8 +366,8 @@ struct ScheduleOverviewiPad: View {
     @State private var show_WeekSlider: Bool = false
 
 
-    // FIX: This archive includes Kyo+ permanently, with no entitlement state.
-    private var kyoPlus_hasPlus: Bool { true }
+    // FIX: Share the local Pro preview setting with Settings; default to on.
+    @AppStorage("archivePlusEnabled") private var kyoPlus_hasPlus = true
     @State var kyoPlus_showPurchaseScreen: Bool = false
     var body: some View {
         NavigationStack{
@@ -560,7 +560,7 @@ struct ScheduleOverviewiPad: View {
             #endif
             .safeAreaInset(edge: .bottom, content: {
 
-                            KyoPlusButtonBinding(color: color, kyoPlus_hasPlus: .constant(true), kyoPlus_showPurchaseScreen: $kyoPlus_showPurchaseScreen, text: "Upgrade to Kyo+ for advanced rotation features", emoji: "📅", rotation: -10, position: CGPoint(x: -3 ,y: 8), actionIfNot: {
+                            KyoPlusButtonBinding(color: color, kyoPlus_hasPlus: $kyoPlus_hasPlus, kyoPlus_showPurchaseScreen: $kyoPlus_showPurchaseScreen, text: "Upgrade to Kyo+ for advanced rotation features", emoji: "📅", rotation: -10, position: CGPoint(x: -3 ,y: 8), actionIfNot: {
                                 skipEmpty = false
                                 skipPast = false
                             })

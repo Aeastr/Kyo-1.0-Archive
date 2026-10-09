@@ -73,7 +73,7 @@ struct TitleCase: View {
             .onAppear{
 //                fontCaseIndexState = fontCaseIndex
 
-                // FIX: No purchase check or access-state write is needed; Kyo+ is permanently unlocked.
+                // FIX: No purchase check is needed; access follows the local Pro setting.
 
             }
 //            .onDisappear{

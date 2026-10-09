@@ -136,7 +136,7 @@ struct Customise: View {
             })
 #endif
             .safeAreaInset(edge: .bottom, content: {
-                KyoPlusButton(color: color, kyoPlus_hasPlus: .constant(true), text: "Upgrade to Kyo+ to access more customisation options")
+                KyoPlusButton(color: color, kyoPlus_hasPlus: $kyoPlus_hasPlus, text: "Upgrade to Kyo+ to access more customisation options")
                                 .padding(.vertical, 5)
                                 .padding(.top, 20)
                                 .background(LinearGradient(stops: [Gradient.Stop(color: Color("bw").opacity(0.0), location: 0.11), Gradient.Stop(color: Color("bw").opacity(0.7), location: 0.6)], startPoint: .top, endPoint: .bottom))
@@ -171,9 +171,9 @@ struct Customise: View {
         .tint(Color(TEMPmulticolored ? "\(TEMPappAccentColor)/5" : "\(TEMPappAccentColor)/\(TEMPappAccentColorIndex)"))
     }
 
-    // FIX: Archive access is unconditional; do not read or update a persisted purchase flag.
+    // FIX: Read the local Pro preview setting, defaulting to on; no purchase checks are used.
 
-    private var kyoPlus_hasPlus: Bool { true }
+    @AppStorage("archivePlusEnabled") private var kyoPlus_hasPlus = true
 
     @State private var kyoPlus_showPurchaseScreen: Bool = false
 
@@ -238,7 +238,7 @@ struct Customise: View {
         }
             
         .padding(.horizontal, 20)
-        AccentColor(TEMPmulticolored: $TEMPmulticolored, TEMPappAccentColor: $TEMPappAccentColor, TEMPappAccentColorIndex: $TEMPappAccentColorIndex, kyoPlus_hasPlus: .constant(true))
+        AccentColor(TEMPmulticolored: $TEMPmulticolored, TEMPappAccentColor: $TEMPappAccentColor, TEMPappAccentColorIndex: $TEMPappAccentColorIndex, kyoPlus_hasPlus: $kyoPlus_hasPlus)
             .padding(.horizontal, 20)
             .disabled(!kyoPlus_hasPlus)
             .opacity(!kyoPlus_hasPlus ? 0.5 : 1.0)
@@ -361,7 +361,7 @@ struct Customise: View {
                                     .fullScreenCover(isPresented: $kyoPlus_showPurchaseScreen, onDismiss: {
                                         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
 
-                                            // FIX: No purchase check or access-state write is needed; Kyo+ is permanently unlocked.
+                                            // FIX: No purchase check is needed; access follows the local Pro setting.
 
                                         }
                                     }, content: {
@@ -376,7 +376,7 @@ struct Customise: View {
             .padding(.horizontal, 20)
             .onAppear{
 
-                // FIX: No purchase check or access-state write is needed; Kyo+ is permanently unlocked.
+                // FIX: No purchase check is needed; access follows the local Pro setting.
 
             }
         Group{

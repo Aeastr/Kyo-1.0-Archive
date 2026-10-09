@@ -42,8 +42,8 @@ struct Sidebar: View {
     @State var showStartErrorAlert = false
 
     @FetchRequest(sortDescriptors: []) var weeks: FetchedResults<Week> // Fetches weeks from Core Data
-    // FIX: Archive access is unconditional; do not read or update a persisted purchase flag.
-    private var kyoPlus_hasPlus: Bool { true }
+    // FIX: Read the local Pro preview setting, defaulting to on; no purchase checks are used.
+    @AppStorage("archivePlusEnabled") private var kyoPlus_hasPlus = true
     @State var kyoPlus_showPurchaseScreen: Bool = false
 
     @FetchRequest(sortDescriptors: []) var classes: FetchedResults<ClassEntity>

@@ -35,8 +35,8 @@ struct NavigationHandler: View {
 
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.verticalSizeClass) var verticalSizeClass
-    // FIX: Archive access is unconditional; do not read or update a persisted purchase flag.
-    private var kyoPlus_hasPlus: Bool { true }
+    // FIX: Read the local Pro preview setting, defaulting to on; no purchase checks are used.
+    @AppStorage("archivePlusEnabled") private var kyoPlus_hasPlus = true
     @StateObject var alertManager = AlertManager()
     @State var showWeekSetup: Bool = false
 
@@ -183,29 +183,10 @@ struct NavigationHandler: View {
 //
 //                    }
 //                }
-        .onChange(of: kyoPlus_hasPlus){
-            if !kyoPlus_hasPlus{
-                                   if activeAppIcon != "AppIconDefault"{
-                                       UIApplication.shared.setAlternateIconName(nil)
-                                   }
-                                   activeAppIcon = "AppIconDefault"
-
-                                   multicolored = true
-                                   appAccentColor = "Default"
-
-                                   accentImageName = "doodle1"
-
-                                   if fontDesign != .expanded || fontDesign != .OpenDyslexic{
-                                       fontDesign = .expanded
-                                   }
-
-                                   fontWeightIndex = 1
-                                   fontCaseIndex = 0
-                               }
-        }
+        // FIX: Toggling archive Pro previews must not erase saved appearance preferences.
         .onChange(of: schedule_SingleDayMode ){
 
-            // FIX: No purchase check or access-state write is needed; Kyo+ is permanently unlocked.
+            // FIX: No purchase check is needed; access follows the local Pro setting.
 
             print("settings data and checking taasks")
             let dispatchGroup = DispatchGroup()

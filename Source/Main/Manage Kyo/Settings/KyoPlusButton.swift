@@ -69,7 +69,7 @@ struct KyoPlusButton: View {
                 .padding(.horizontal, 20)
                 .sheet(isPresented: $kyoPlus_showPurchaseScreen, onDismiss: {
 
-                    // FIX: No purchase check or access-state write is needed; Kyo+ is permanently unlocked.
+                    // FIX: No purchase check is needed; access follows the local Pro setting.
 
                 }, content: {
 #if !os(visionOS)
@@ -95,7 +95,7 @@ struct KyoPlusButton: View {
                 })
                 .onAppear{
 
-                    // FIX: No purchase check or access-state write is needed; Kyo+ is permanently unlocked.
+                    // FIX: No purchase check is needed; access follows the local Pro setting.
 
                 }
 
@@ -171,7 +171,7 @@ struct KyoPlusButtonBinding: View {
                 .padding(.horizontal, 20)
                 .sheet(isPresented: $kyoPlus_showPurchaseScreen, onDismiss: {
 
-                    // FIX: No purchase check or access-state write is needed; Kyo+ is permanently unlocked.
+                    // FIX: No purchase check is needed; access follows the local Pro setting.
 
                 }, content: {
 #if !os(visionOS)
@@ -205,7 +205,7 @@ struct KyoPlusButtonBinding: View {
         }
         .onAppear{
 
-                               // FIX: No purchase check or access-state write is needed; Kyo+ is permanently unlocked.
+                               // FIX: No purchase check is needed; access follows the local Pro setting.
 
                            }
 

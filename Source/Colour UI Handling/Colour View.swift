@@ -24,9 +24,9 @@ struct ColorPanel: View {
     @AppStorage("selectedHueSet") var selectedHueSet: HueSet = .defaultHues
     @State var colourName: String = ""
 
-    // FIX: Archive access is unconditional; do not read or update a persisted purchase flag.
+    // FIX: Read the local Pro preview setting, defaulting to on; no purchase checks are used.
 
-    private var kyoPlus_hasPlus: Bool { true }
+    @AppStorage("archivePlusEnabled") private var kyoPlus_hasPlus = true
     @State private var kyoPlus_showPurchaseScreen: Bool = false
     var body: some View {
         #if !os(macOS)

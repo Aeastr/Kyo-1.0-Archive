@@ -1,16 +1,19 @@
-// FIX: Replace the historical RevenueCat paywall with the included-access explanation.
+// FIX: Replace the historical paywall with a local Pro preview setting.
 // The original purchase implementation is preserved on original-source.
 import SwiftUI
 
 struct KyoPlus: View {
     var color: Color = .accentColor
     var onboard: Bool = false
+    @AppStorage("archivePlusEnabled") private var proEnabled = true
 
     var body: some View {
         VStack(spacing: 12) {
-            Text("Kyo+ is included")
+            Text("Kyo+ in this archive")
                 .font(.headline)
-            Text("All Kyo+ features are enabled in this source archive. No purchase is needed.")
+            Toggle("Pro", isOn: $proEnabled)
+                .tint(color)
+            Text("Explore the original free and Pro features. No purchase needed.")
                 .multilineTextAlignment(.center)
         }
         .padding()

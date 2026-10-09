@@ -351,7 +351,7 @@ struct AccentColor: View {
 
             TEMPappAccentColorIndex = appAccentColorIndex
 
-            // FIX: No purchase check or access-state write is needed; Kyo+ is permanently unlocked.
+            // FIX: No purchase check is needed; access follows the local Pro setting.
 
         }
         #if os(visionOS)

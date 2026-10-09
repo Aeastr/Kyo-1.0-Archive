@@ -59,9 +59,9 @@ struct PlannerView: View {
     var planner_viewSettings_twoColumn : Bool = false
 #endif
 
-    // FIX: Archive access is unconditional; do not read or update a persisted purchase flag.
+    // FIX: Read the local Pro preview setting, defaulting to on; no purchase checks are used.
 
-    private var kyoPlus_hasPlus: Bool { true }
+    @AppStorage("archivePlusEnabled") private var kyoPlus_hasPlus = true
 
     var body: some View {
 
@@ -80,7 +80,7 @@ struct PlannerView: View {
                             PlannerWeekView(color: color, scrolled: $scrolled)
                                 .onAppear {
 
-                                                                   // FIX: No purchase check or access-state write is needed; Kyo+ is permanently unlocked.
+                                                                   // FIX: No purchase check is needed; access follows the local Pro setting.
 
                                                                }
                         }
@@ -88,7 +88,7 @@ struct PlannerView: View {
                             PlannerTimelineView(color: color, scrolled: $scrolled)
                                 .onAppear {
 
-                                    // FIX: No purchase check or access-state write is needed; Kyo+ is permanently unlocked.
+                                    // FIX: No purchase check is needed; access follows the local Pro setting.
 
                                 }
                         }
@@ -186,7 +186,7 @@ struct PlannerView: View {
                                     PlannerWeekView(color: color, scrolled: $scrolled)
                                         .onAppear {
 
-                                                                           // FIX: No purchase check or access-state write is needed; Kyo+ is permanently unlocked.
+                                                                           // FIX: No purchase check is needed; access follows the local Pro setting.
 
                                                                        }
                                 }
@@ -194,7 +194,7 @@ struct PlannerView: View {
                                     PlannerTimelineView(color: color, scrolled: $scrolled)
                                         .onAppear {
 
-                                                                           // FIX: No purchase check or access-state write is needed; Kyo+ is permanently unlocked.
+                                                                           // FIX: No purchase check is needed; access follows the local Pro setting.
 
                                                                        }
                                 }
